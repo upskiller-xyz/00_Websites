@@ -1,6 +1,6 @@
 // src/company/App.tsx
-import React from 'react'
-import { SharedButton } from '../components/SharedButton'
+import React from "react";
+import { SharedButton } from "../components/SharedButton";
 
 export default function App() {
   return (
@@ -8,5 +8,5 @@ export default function App() {
       <h1>About Our Tool</h1>
       <SharedButton>Learn more</SharedButton>
     </div>
-  )
+  );
 }
