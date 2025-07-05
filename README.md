@@ -9,13 +9,13 @@ npm run dev
 
 # → http://localhost:5173/company.html
 
-# → http://localhost:5173/tool.html
+# → http://localhost:5173/tool-01.html
 
 # Build
 
 npm run build
 
-# → dist/company.html + dist/tool.html + their JS/CSS
+# → dist/company.html + dist/tool-01.html + their JS/CSS
 
 # Packages to setup React development environment
 

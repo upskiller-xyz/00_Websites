@@ -1,13 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { resolve } from "path";
 
 export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
       input: {
-        company: new URL("./public/company.html", import.meta.url).pathname,
-        tool: new URL("./public/tool.html", import.meta.url).pathname,
+        index: resolve(__dirname, "public/index.html"),
+        tool-01: resolve(__dirname, "public/tool-01.html"),
       },
     },
   },
