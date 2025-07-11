@@ -5,5 +5,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     open: true,
+    fs: {
+      strict: false,
+    },
+    // Vite's dev server already falls back to index.html for unknown routes in SPA mode
   },
 });

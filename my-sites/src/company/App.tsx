@@ -5,7 +5,9 @@ import { SharedButton } from "../components/SharedButton";
 export default function App() {
   return (
     <div className="container">
-      <h1>About Our Company</h1>
+      <header>
+        <h1>About Our Company</h1>
+      </header>
       <SharedButton>Learn more</SharedButton>
     </div>
   );
