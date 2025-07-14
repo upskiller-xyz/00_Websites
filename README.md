@@ -7,15 +7,13 @@ Code for our company and tools static web pages
 npm install
 npm run dev
 
-# → http://localhost:5173/company.html
-
-# → http://localhost:5173/tool-01.html
+# → http://localhost:5175/
 
 # Build
 
 npm run build
 
-# → dist/company.html + dist/tool-01.html + their JS/CSS
+# → dist/index.html + their JS/CSS
 
 # Packages to setup React development environment
 

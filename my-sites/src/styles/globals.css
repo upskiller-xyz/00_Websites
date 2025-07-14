@@ -1,12 +1,5 @@
-/* src/styles/globals.css */
+/* src/styles/globals.css - site-specific styles */
 body {
   margin: 0;
   font-family: system-ui;
-}
-.btn {
-  padding: 0.5rem 1rem;
-  background: #007acc;
-  color: white;
-  border: none;
-  border-radius: 4px;
 }
