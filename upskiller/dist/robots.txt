@@ -1,9 +1,0 @@
-# robots.txt for Company website
-User-agent: *
-Allow: /
-
-# Disallow crawling of sensitive or private directories (add as needed)
-# Disallow: /private/
-# Disallow: /admin/
-
-Sitemap: /sitemap.xml
