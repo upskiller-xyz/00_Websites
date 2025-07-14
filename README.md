@@ -17,6 +17,7 @@ Follow these step-by-step instructions to set up the development environment on 
 ### 📋 Prerequisites
 
 Before you begin, make sure you have:
+
 - A computer running macOS, Windows, or Linux
 - Internet connection
 - Basic familiarity with using the terminal/command line
@@ -30,6 +31,7 @@ Node.js is the runtime that allows us to run JavaScript outside the browser. npm
 #### Option A: Using Node Version Manager (nvm) - **Recommended**
 
 **For macOS/Linux:**
+
 ```bash
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -47,6 +49,7 @@ npm -v     # Should show 10.x.x or higher
 ```
 
 **For Windows:**
+
 ```bash
 # Download and install nvm-windows from:
 # https://github.com/coreybutler/nvm-windows/releases
@@ -61,6 +64,7 @@ npm -v
 ```
 
 #### Option B: Direct Installation
+
 Download from [nodejs.org](https://nodejs.org/) and install the LTS version.
 
 ---
@@ -70,11 +74,13 @@ Download from [nodejs.org](https://nodejs.org/) and install the LTS version.
 Git is our version control system.
 
 **Check if Git is installed:**
+
 ```bash
 git --version
 ```
 
 **If not installed:**
+
 - **macOS**: Install Xcode Command Line Tools: `xcode-select --install`
 - **Windows**: Download from [git-scm.com](https://git-scm.com/download/win)
 - **Linux**: `sudo apt install git` (Ubuntu/Debian) or `sudo yum install git` (CentOS/RHEL)
@@ -128,6 +134,7 @@ npm install
 ```
 
 **What this does:**
+
 - Downloads all the packages listed in `package.json`
 - Creates a `node_modules` folder with dependencies
 - Creates a `package-lock.json` file to lock dependency versions
@@ -142,6 +149,7 @@ npm run dev
 ```
 
 **You should see output like:**
+
 ```
   VITE v5.4.19  ready in 543ms
 
@@ -155,12 +163,12 @@ npm run dev
 
 ## 🛠️ Available Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
 | `npm run preview` | Preview production build |
-| `npm run lint` | Check code quality |
+| `npm run lint`    | Check code quality       |
 
 ---
 
@@ -198,15 +206,18 @@ npm run dev
 ## 🎨 Technology Stack
 
 ### **Frontend Framework**
+
 - **React 18** - Component-based UI library
 - **TypeScript** - Type-safe JavaScript
 - **Vite** - Fast build tool and dev server
 
 ### **Styling**
+
 - **Tailwind CSS** - Utility-first CSS framework
 - **PostCSS** - CSS processing tool
 
 ### **Development Tools**
+
 - **ESLint** - Code linting
 - **Prettier** - Code formatting
 - **Git** - Version control
@@ -216,6 +227,7 @@ npm run dev
 ## 🔄 Development Workflow
 
 ### 1. **Before You Start Working**
+
 ```bash
 # Make sure you have the latest changes
 git pull origin main
@@ -225,7 +237,12 @@ npm install
 ```
 
 ### 2. **While Working**
+
 ```bash
+
+# Navigate to the root folder of website you are working on
+cd upskiller
+
 # Start the development server
 npm run dev
 
@@ -233,6 +250,7 @@ npm run dev
 ```
 
 ### 3. **Before Committing**
+
 ```bash
 # Check your code for issues
 npm run lint
@@ -242,6 +260,7 @@ npm run build
 ```
 
 ### 4. **Committing Changes**
+
 ```bash
 # Add your changes
 git add .
@@ -258,20 +277,24 @@ git push
 ## 🆘 Common Issues and Solutions
 
 ### **"npm: command not found"**
+
 - Node.js is not installed or not in your PATH
 - Reinstall Node.js or restart your terminal
 
 ### **"Permission denied" errors**
+
 ```bash
 # Fix npm permissions (macOS/Linux)
 sudo chown -R $(whoami) ~/.npm
 ```
 
 ### **Port 5175 is already in use**
+
 - Another process is using the port
 - Kill the process or Vite will automatically use a different port
 
 ### **"Module not found" errors**
+
 ```bash
 # Delete node_modules and reinstall
 rm -rf node_modules package-lock.json
@@ -279,6 +302,7 @@ npm install
 ```
 
 ### **TypeScript errors**
+
 - Check the file paths in import statements
 - Make sure you're importing React components correctly
 - Verify TypeScript configuration in `tsconfig.json`
@@ -288,6 +312,7 @@ npm install
 ## 🤝 Contributing Guidelines
 
 1. **Create a new branch** for your feature:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -295,6 +320,7 @@ npm install
 2. **Make your changes** and test thoroughly
 
 3. **Commit your changes** with clear messages:
+
    ```bash
    git commit -m "feat: add contact form validation"
    ```
@@ -309,15 +335,18 @@ npm install
 ## 📚 Learning Resources
 
 ### **React & TypeScript**
+
 - [React Official Tutorial](https://react.dev/learn)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
 
 ### **Tailwind CSS**
+
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Tailwind UI Components](https://tailwindui.com/components)
 
 ### **General Web Development**
+
 - [MDN Web Docs](https://developer.mozilla.org/) - Comprehensive web development reference
 - [JavaScript.info](https://javascript.info/) - Modern JavaScript tutorial
 
