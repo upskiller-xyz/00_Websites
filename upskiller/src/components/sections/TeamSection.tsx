@@ -4,31 +4,71 @@ import React, { useState } from 'react';
 const TeamSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('team');
 
-  const teamData = {
+  const teamParagraphs = [
+    "Our journey started in autumn 2023, when three tech-enthusiastic architects and engineers found themselves sharing a common frustration: the construction industry's surprisingly low level of digitalization. A few years into our careers, we were ready for change.",
+    <>
+      We crossed paths at IAAC's Master in Advanced Computation for Architecture & Design (
+      <a
+        href="https://iaac.net/masters/master-in-advanced-computation-for-architecture-design/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary-600 underline"
+      >
+        MaCAD
+      </a>
+      ), where Stasja taught and we studied. Together, we developed several promising machine learning prototypes, including a daylight predictive model that caught the attention of the academic community and was published in a <a
+        href="https://www.sciencedirect.com/science/article/abs/pii/S0360132325002252"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary-600 underline"
+      >high-impact journal</a>.
+    </>,
+    <>This success sparked an idea: why not adapt this model for Swedish regulations? We applied for funding and were thrilled to receive a grant from the <a
+      href="https://belysningsstiftelsen.se/projekt/alejandro-pacheco-dieguez-ml-modell-for-dagsljusanalys"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-primary-600 underline"
+    >Bertil and Britt Svensson Foundation</a>. The project has been generating <a
+      href="https://www.svenskbyggtidning.se/2025/03/21/nytt-ai-projekt-satter-dagsljuset-i-fokus/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-primary-600 underline"
+    >buzz</a> in the industry, and after a couple of months working together, we've discovered something even more valuable—we make a great team.</>,
+    "With complementary skills and a growing network of industry connections, we're excited about what's next. If you'd like to connect, drop us a line or reach out to any of us directly."
+  ];
+
+  type TeamTab = {
+    subtitle: string;
+  };
+  type MemberTab = {
+    content: string;
+    subtitle: string;
+  };
+  const teamData: {
+    team: TeamTab;
+    alejandro: MemberTab;
+    libny: MemberTab;
+    stasja: MemberTab;
+    christoph: MemberTab;
+  } = {
     team: {
-      title: "Our Story",
-      content: "Founded by experts in architecture and engineering, our team combines decades of experience in sustainable design with cutting-edge technology. We're passionate about creating tools that make environmental optimization accessible to designers and engineers worldwide.",
-      subtitle: "Working in collaboration with leading organizations including Almi, Belysning Stiftelsen, Formas, Scaleway, White, Link, and Lund University."
+      subtitle: "<a href=\"mailto:info@upskiller.xyz\" class=\"text-primary-600 underline\">info@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/company/upskiller-xyz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     alejandro: {
-      title: "Alejandro",
       content: "Building performance specialist with 10+ years at Swedish architectural firms and research collaborations with Swedish universities.",
-      subtitle: "alejandro.pacheco@upskiller.xyz\nLinkedIn"
+      subtitle: "<a href=\"mailto:alejandro.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">alejandro.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/alejandro-pacheco-diéguez-06b1b238/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     libny: {
-      title: "Libny",
       content: "Computational design expert with teaching experience at architecture schools across Europe and China.",
-      subtitle: "libny.pacheco@upskiller.xyz\nLinkedIn"
+      subtitle: "<a href=\"mailto:libny.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">libny.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/libny-pacheco-6548b95/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     stasja: {
-      title: "Stasja",
-      content: "Our tech lead, and machine learning engineer at IKEM, lecturer at IAAC Barcelona.",
-      subtitle: "stasja.kocovic@upskiller.xyz\nLinkedIn"
+      content: "Our tech lead, and machine learning engineer at H&M, lecturer at IAAC Barcelona.",
+      subtitle: "<a href=\"mailto:stasja.fedorova@upskiller.xyz\" class=\"text-primary-600 underline\">stasja.fedorova@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/stasja-fedorova/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     christoph: {
-      title: "Christoph",
       content: "BIM specialist with 10+ years of experience working in Austria and Germany.",
-      subtitle: "christoph.bachmann@upskiller.xyz\nLinkedIn"
+      subtitle: "<a href=\"mailto:christoph.berkmiller@upskiller.xyz\" class=\"text-primary-600 underline\">christoph.berkmiller@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/christoph-berkmiller-08822020a/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     }
   };
 
@@ -83,15 +123,26 @@ const TeamSection: React.FC = () => {
           <div className="p-8">
             <div className="max-w-4xl mx-auto">
               <div className="mb-8">
-                <h3 className="font-heading text-3xl font-bold text-dark mb-4">
-                  {teamData[activeTab as keyof typeof teamData].title}
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                  {teamData[activeTab as keyof typeof teamData].content}
-                </p>
-                <div className="text-sm text-gray-600 whitespace-pre-line">
-                  {teamData[activeTab as keyof typeof teamData].subtitle}
-                </div>
+                {/* Title removed as requested */}
+                {activeTab === 'team'
+                  ? teamParagraphs.map((para, idx) => (
+                      <p key={idx} className="text-lg text-gray-700 leading-relaxed mb-4">
+                        {para}
+                      </p>
+                    ))
+                  : (() => {
+                      const member = teamData[activeTab as keyof typeof teamData] as MemberTab;
+                      return (
+                        <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                          {member.content}
+                        </p>
+                      );
+                    })()
+                }
+                <div
+                  className="text-sm text-gray-600 whitespace-pre-line"
+                  dangerouslySetInnerHTML={{ __html: teamData[activeTab as keyof typeof teamData].subtitle }}
+                />
               </div>
 
               {/* Tab Navigation */}
