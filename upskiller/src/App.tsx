@@ -2,9 +2,9 @@
 import React from "react";
 import Navigation from "./components/Navigation";
 import HeroSection from "./components/sections/HeroSection";
-import AboutSection from "./components/sections/AboutSection";
-import ServicesSection from "./components/sections/ServicesSection";
-import ContactSection from "./components/sections/ContactSection";
+import TeamSection from "./components/sections/TeamSection";
+import ProductsSection from "./components/sections/ProductsSection";
+import ResourcesSection from "./components/sections/ResourcesSection";
 
 export default function App() {
   return (
@@ -12,9 +12,9 @@ export default function App() {
       <Navigation />
       <main>
         <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <ContactSection />
+        <TeamSection />
+        <ProductsSection />
+        <ResourcesSection />
       </main>
     </div>
   );
