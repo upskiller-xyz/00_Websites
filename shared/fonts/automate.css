@@ -1,0 +1,48 @@
+/* AUTOMATE Font Family */
+
+@font-face {
+  font-family: 'AUTOMATE';
+  src: url('./AUTOMATEBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AUTOMATE';
+  src: url('./AUTOMATELight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Custom Properties for easy usage */
+:root {
+  --font-automate: 'AUTOMATE', system-ui, -apple-system, sans-serif;
+}
+
+/* Base typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-automate);
+  font-weight: 700;
+}
+
+p, a, span, li {
+  font-family: var(--font-automate);
+  font-weight: 300;
+}
+
+/* Utility classes */
+.font-automate {
+  font-family: var(--font-automate);
+}
+
+.font-automate-light {
+  font-family: var(--font-automate);
+  font-weight: 300;
+}
+
+.font-automate-bold {
+  font-family: var(--font-automate);
+  font-weight: 700;
+}

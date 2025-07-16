@@ -1,5 +1,5 @@
 /* src/styles/globals.css - site-specific styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "../../../shared/fonts/automate.css";
 
 @import "tailwindcss";
 
@@ -9,12 +9,14 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui;
+  font-family: var(--font-automate);
+  font-weight: 300;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', system-ui;
+  font-family: var(--font-automate);
+  font-weight: 700;
   line-height: 1.2;
 }
 
