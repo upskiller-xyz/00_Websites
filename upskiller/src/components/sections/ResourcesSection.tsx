@@ -231,7 +231,7 @@ const ResourcesSection: React.FC = () => {
         <div className="mt-16 pt-8 border-t border-gray-700 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400">
-              © 2024 Upskiller. All rights reserved.
+              © 2025 BIMTech Innovations AB. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
