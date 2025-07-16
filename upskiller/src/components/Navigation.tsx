@@ -38,37 +38,55 @@ const Navigation: React.FC = () => {
   };
 
   const navItems = [
-    { id: 'home', label: 'Home' },
     { id: 'team', label: 'Team' },
     { id: 'products', label: 'Products' },
     { id: 'resources', label: 'Resources' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-heading font-bold text-xl text-dark">
-            Upskiller
-          </div>
+          {/* Logo - always floating */}
+          <button
+            onClick={() => scrollToSection('home')}
+            className="transition-opacity duration-200 hover:opacity-80"
+          >
+            <img
+              src="/images/upskiller_logo_RGB.svg"
+              alt="Upskiller"
+              className="h-8 w-auto"
+            />
+          </button>
           
-          <div className="hidden md:flex space-x-8">
+          {/* Middle navigation with white background when scrolled */}
+          <div className={`hidden md:flex space-x-8 px-6 py-2 transition-all duration-300 ${
+            isScrolled ? 'bg-white/20 backdrop-blur-sm' : 'bg-transparent'
+          }`}>
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`transition-colors duration-200 ${
                   activeSection === item.id
-                    ? 'text-primary-600 font-medium'
-                    : 'text-gray-600 hover:text-primary-600'
+                    ? 'font-medium'
+                    : 'hover:opacity-80'
                 }`}
+                style={{ color: '#EDF4F1' }}
               >
                 {item.label}
               </button>
             ))}
           </div>
+          
+          {/* Green CTA button - always visible */}
+          <button
+            onClick={() => scrollToSection('resources')}
+            className="px-4 py-2 text-black font-medium transition-all duration-200 hover:opacity-90"
+            style={{ backgroundColor: '#00FF66' }}
+          >
+            Contact us
+          </button>
           
           {/* Mobile menu button */}
           <div className="md:hidden">
