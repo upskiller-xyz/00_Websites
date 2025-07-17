@@ -72,7 +72,7 @@ const Navigation: React.FC = () => {
                     ? 'font-medium'
                     : 'hover:opacity-80'
                 }`}
-                style={{ color: '#EDF4F1' }}
+                style={{ color: '#f4fffa' }}
               >
                 {item.label}
               </button>

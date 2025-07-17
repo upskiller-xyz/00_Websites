@@ -91,13 +91,13 @@ const ResourcesSection: React.FC = () => {
   ];
 
   return (
-    <section id="resources" className="section-container bg-dark text-white">
+    <section id="resources" className="section-container" style={{ backgroundColor: '#180057' }}>
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold" style={{ color: '#f4fffa' }}>
             Resources
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#f4fffa' }}>
             Access our knowledge base, stay updated with industry news, and connect with our team 
             for support and collaboration opportunities.
           </p>
