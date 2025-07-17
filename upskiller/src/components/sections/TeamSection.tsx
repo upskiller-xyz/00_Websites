@@ -1,5 +1,6 @@
 // src/components/sections/TeamSection.tsx
 import React, { useState } from 'react';
+import ListBoldKeyLightValue from '../../../../shared/components/ListBoldKeyLightValue';
 
 const TeamSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('team');
@@ -33,16 +34,17 @@ const TeamSection: React.FC = () => {
       target="_blank"
       rel="noopener noreferrer"
       className="text-primary-600 underline"
-    >buzz</a> in the industry, and after a couple of months working together, we've discovered something even more valuable—we make a great team.</>,
+    >buzz</a> in the industry, and after a couple of months working together, we've discovered something even more valuable: we make a great team. Our recent acceptance by Almi, Sweden's business development agency, supports that. </>,
     "With complementary skills and a growing network of industry connections, we're excited about what's next. If you'd like to connect, drop us a line or reach out to any of us directly."
   ];
 
   type TeamTab = {
-    subtitle: string;
+    socials: string;
   };
   type MemberTab = {
-    content: string;
-    subtitle: string;
+    content: React.ReactNode;
+    socials: string;
+    extra?: React.ReactNode;
   };
   const teamData: {
     team: TeamTab;
@@ -52,24 +54,76 @@ const TeamSection: React.FC = () => {
     christoph: MemberTab;
   } = {
     team: {
-      subtitle: "<a href=\"mailto:info@upskiller.xyz\" class=\"text-primary-600 underline\">info@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/company/upskiller-xyz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
+      socials: "<a href=\"mailto:info@upskiller.xyz\" class=\"text-primary-600 underline\">info@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/company/upskiller-xyz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     alejandro: {
-      content: "Building performance specialist with 10+ years at Swedish architectural firms and research collaborations with Swedish universities.",
-      subtitle: "<a href=\"mailto:alejandro.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">alejandro.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/alejandro-pacheco-diéguez-06b1b238/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
+      content:  (
+        <div className="mb-8">
+          <div className="font-light">Building performance specialist with 10+ years at Swedish architectural firms and research collaborations with Swedish universities.</div>
+        </div>
+      ),
+      extra: (
+        <ListBoldKeyLightValue
+          graduatedAs="Architect with master in environmental building design."
+          teachingExperience="Lund?"
+          workExperience="BAU, White Arkitekter."
+          favLLM="GPT."
+          fact="It is not Libny's brother."
+        />
+      ),
+      socials: "<a href=\"mailto:alejandro.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">alejandro.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/alejandro-pacheco-diéguez-06b1b238/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     libny: {
-      content: "Computational design expert with teaching experience at architecture schools across Europe and China.",
-      subtitle: "<a href=\"mailto:libny.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">libny.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/libny-pacheco-6548b95/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
+      content:  (
+        <div className="mb-8">
+          <div className="font-light">Computational design expert with teaching experience at architecture schools across Europe and China.</div>
+        </div>
+      ),
+      extra: (
+        <ListBoldKeyLightValue
+          graduatedAs="Architect with master in Advanced Computation for Architecture & Design."
+          teachingExperience="Universidad de los Andes, Tsinghua University, IAAC."
+          workExperience="Plasma Studio, Crossboundaries, White Arkitekter."
+          favLLM="Claude."
+          fact="It is not Alejandro's brother."
+        />
+      ),
+      socials: "<a href=\"mailto:libny.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">libny.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/libny-pacheco-6548b95/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     stasja: {
-      content: "Our tech lead, and machine learning engineer at H&M, lecturer at IAAC Barcelona.",
-      subtitle: "<a href=\"mailto:stasja.fedorova@upskiller.xyz\" class=\"text-primary-600 underline\">stasja.fedorova@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/stasja-fedorova/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
+      content:  (
+        <div className="mb-8">
+          <div className="font-light">Our tech lead, and machine learning engineer at H&M, lecturer at IAAC Barcelona.</div>
+        </div>
+      ),
+      extra: (
+        <ListBoldKeyLightValue
+          graduatedAs="Architect with master in Data Science."
+          teachingExperience="Umeå University, IAAC."
+          workExperience="ELSE Corp, Rave Review, H&M."
+          favLLM="Claude?."
+          fact="Enjoys trail running."
+        />
+      ),
+      socials: "<a href=\"mailto:stasja.fedorova@upskiller.xyz\" class=\"text-primary-600 underline\">stasja.fedorova@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/stasja-fedorova/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
     },
     christoph: {
-      content: "BIM specialist with 10+ years of experience working in Austria and Germany.",
-      subtitle: "<a href=\"mailto:christoph.berkmiller@upskiller.xyz\" class=\"text-primary-600 underline\">christoph.berkmiller@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/christoph-berkmiller-08822020a/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
-    }
+      content:  (
+        <div className="mb-8">
+          <div className="font-light">BIM specialist with 10+ years of experience working in Austria and Germany.</div>
+        </div>
+      ),
+      extra: (
+        <ListBoldKeyLightValue
+          graduatedAs="Civil Engineer with master in Advanced Computation for Architecture & Design."
+          teachingExperience="Munich University of Applied Sciences."
+          workExperience="Jaeger Ausbau Gruppe, PORR."
+          favLLM="Claude?."
+          fact="Experienced drone pilot."
+        />
+      ),
+      socials: "<a href=\"mailto:christoph.berkmiller@upskiller.xyz\" class=\"text-primary-600 underline\">christoph.berkmiller@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/christoph-berkmiller-08822020a/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
+    },
   };
 
   const tabs = [
@@ -132,16 +186,17 @@ const TeamSection: React.FC = () => {
                     ))
                   : (() => {
                       const member = teamData[activeTab as keyof typeof teamData] as MemberTab;
-                      return (
-                        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                          {member.content}
-                        </p>
-                      );
+                      return <>
+                        <p className="text-lg text-gray-700 leading-relaxed mb-4">{member.content}</p>
+                        {member.extra && (
+                          <div className="mb-2">{member.extra}</div>
+                        )}
+                      </>;
                     })()
                 }
                 <div
                   className="text-sm text-gray-600 whitespace-pre-line"
-                  dangerouslySetInnerHTML={{ __html: teamData[activeTab as keyof typeof teamData].subtitle }}
+                  dangerouslySetInnerHTML={{ __html: teamData[activeTab as keyof typeof teamData].socials }}
                 />
               </div>
 

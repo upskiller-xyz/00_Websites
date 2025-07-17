@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
                 Tools you trust. Insights you depend on.
               </h1>
               <p className="text-xl leading-relaxed" style={{ color: '#EDF4F1' }}>
-                We develop open, accessible, indispensable software that simplifies complexity, turns design information into meaningful insights and empowers AEC professionals to work efficiently.
+                At Upskiller, we develop open, accessible, indispensable software that simplifies complexity, turns design information into meaningful insights and empowers AEC professionals to work efficiently.
               </p>
               <p className="text-xl leading-relaxed" style={{ color: '#EDF4F1' }}>
                 We see a future where the community of AEC professionals seamlessly access information and knowledge, truly understands them, and use them to build a better world.

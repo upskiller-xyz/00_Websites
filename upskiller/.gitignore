@@ -9,6 +9,9 @@ pnpm-debug.log*
 dist/
 build/
 
+# Compiled JavaScript files (use .tsx instead)
+src/**/*.js
+
 # Environment variables
 .env
 .env.local
