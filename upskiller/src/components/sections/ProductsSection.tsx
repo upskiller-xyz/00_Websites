@@ -39,24 +39,24 @@ const ProductsSection: React.FC = () => {
         return {
           bg: isUpcoming ? 'bg-gray-400' : 'bg-primary-500',
           iconBg: isUpcoming ? 'bg-gray-100' : 'bg-primary-100',
-          iconText: isUpcoming ? 'text-gray-500' : 'text-primary-600',
-          badge: isUpcoming ? 'bg-gray-50 text-gray-600' : 'bg-primary-50 text-primary-700',
+          iconText: isUpcoming ? 'text-dark' : 'text-primary-600',
+          badge: isUpcoming ? 'bg-gray-50 text-dark' : 'bg-primary-50 text-primary-700',
           button: isUpcoming ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-500 hover:bg-primary-600'
         };
       case 'accent':
         return {
           bg: isUpcoming ? 'bg-gray-400' : 'bg-accent',
           iconBg: isUpcoming ? 'bg-gray-100' : 'bg-green-100',
-          iconText: isUpcoming ? 'text-gray-500' : 'text-accent',
-          badge: isUpcoming ? 'bg-gray-50 text-gray-600' : 'bg-green-50 text-green-700',
+          iconText: isUpcoming ? 'text-dark' : 'text-accent',
+          badge: isUpcoming ? 'bg-gray-50 text-dark' : 'bg-green-50 text-green-700',
           button: isUpcoming ? 'bg-gray-400 cursor-not-allowed' : 'bg-accent hover:bg-green-600'
         };
       default:
         return {
           bg: 'bg-gray-500',
           iconBg: 'bg-gray-100',
-          iconText: 'text-gray-600',
-          badge: 'bg-gray-50 text-gray-700',
+          iconText: 'text-dark',
+          badge: 'bg-gray-50 text-dark',
           button: 'bg-gray-500'
         };
     }
@@ -67,9 +67,9 @@ const ProductsSection: React.FC = () => {
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
-            Our <span className="text-primary-600">Products</span>
+            Our Products
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-dark max-w-3xl mx-auto">
             Cutting-edge tools designed to revolutionize sustainable building design 
             and environmental optimization for architects and engineers.
           </p>
@@ -105,11 +105,11 @@ const ProductsSection: React.FC = () => {
                       <h3 className="font-heading text-3xl font-bold text-dark">
                         {product.name}
                       </h3>
-                      <p className="text-lg text-gray-500 font-medium">
+                      <p className="text-lg text-dark font-medium">
                         {product.subtitle}
                       </p>
                     </div>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-dark leading-relaxed">
                       {product.description}
                     </p>
                   </div>
@@ -121,7 +121,7 @@ const ProductsSection: React.FC = () => {
                       {product.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2">
                           <div className={`w-2 h-2 rounded-full ${isUpcoming ? 'bg-gray-400' : colors.bg}`}></div>
-                          <span className={`text-sm ${isUpcoming ? 'text-gray-500' : 'text-gray-700'}`}>
+                          <span className="text-sm text-dark">
                             {feature}
                           </span>
                         </div>
@@ -147,7 +147,7 @@ const ProductsSection: React.FC = () => {
           <h3 className="font-heading text-2xl font-bold text-dark mb-4">
             Need Custom Solutions?
           </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-dark mb-6 max-w-2xl mx-auto">
             Our team can develop tailored tools and integrations to meet your specific 
             environmental analysis and sustainable design requirements.
           </p>

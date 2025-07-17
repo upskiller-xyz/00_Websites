@@ -94,8 +94,8 @@ const ResourcesSection: React.FC = () => {
     <section id="resources" className="section-container bg-dark text-white">
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold">
-            <span className="text-primary-400">Resources</span>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
+            Resources
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Access our knowledge base, stay updated with industry news, and connect with our team 

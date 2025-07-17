@@ -14,7 +14,7 @@ export default {
           700: '#0369a1',
           900: '#0c4a6e',
         },
-        dark: '#1e293b',
+        dark: '#180057',
         accent: '#10b981',
       },
       fontFamily: {

@@ -139,9 +139,9 @@ const TeamSection: React.FC = () => {
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
-            Our <span className="text-primary-600">Team</span>
+            Our Team
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-dark max-w-3xl mx-auto">
             Meet the passionate professionals behind Upskiller's innovative approach to 
             sustainable building design and environmental optimization.
           </p>
@@ -180,14 +180,14 @@ const TeamSection: React.FC = () => {
                 {/* Title removed as requested */}
                 {activeTab === 'team'
                   ? teamParagraphs.map((para, idx) => (
-                      <p key={idx} className="text-lg text-gray-700 leading-relaxed mb-4">
+                      <p key={idx} className="text-lg text-dark leading-relaxed mb-4">
                         {para}
                       </p>
                     ))
                   : (() => {
                       const member = teamData[activeTab as keyof typeof teamData] as MemberTab;
                       return <>
-                        <p className="text-lg text-gray-700 leading-relaxed mb-4">{member.content}</p>
+                        <p className="text-lg text-dark leading-relaxed mb-4">{member.content}</p>
                         {member.extra && (
                           <div className="mb-2">{member.extra}</div>
                         )}
@@ -195,7 +195,7 @@ const TeamSection: React.FC = () => {
                     })()
                 }
                 <div
-                  className="text-sm text-gray-600 whitespace-pre-line"
+                  className="text-sm text-dark whitespace-pre-line"
                   dangerouslySetInnerHTML={{ __html: teamData[activeTab as keyof typeof teamData].socials }}
                 />
               </div>
@@ -209,7 +209,7 @@ const TeamSection: React.FC = () => {
                     className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                       activeTab === tab.id
                         ? 'bg-primary-600 text-white shadow-lg'
-                        : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+                        : 'bg-white text-dark hover:bg-gray-50 border border-gray-200'
                     }`}
                   >
                     {tab.label}
@@ -225,7 +225,7 @@ const TeamSection: React.FC = () => {
           <h3 className="font-heading text-2xl font-bold text-dark mb-4">
             Want to Join Our Mission?
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-dark mb-6">
             We're always looking for talented individuals who share our passion for sustainable design.
           </p>
           <button className="bg-primary-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200">
