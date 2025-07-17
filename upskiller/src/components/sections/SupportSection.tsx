@@ -11,7 +11,7 @@ const SupportSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="bg-[#00d67a] py-8">
+      <div className="bg-[#00d67a] py-8 transition-transform duration-300 hover:translate-x-[30px] hover:-translate-y-[30px]">
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           <img 
             src="/images/almi-dark.svg" 
