@@ -1,6 +1,5 @@
 // src/components/sections/HeroSection.tsx
 import React, { useEffect, useRef } from 'react';
-import { SharedButton } from '../../../../shared/components/SharedButton';
 
 const HeroSection: React.FC = () => {
   const staticMotifRef = useRef<HTMLDivElement>(null);
