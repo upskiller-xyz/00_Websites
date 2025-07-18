@@ -1,6 +1,7 @@
 // src/components/sections/ResourcesSection.tsx
 import React from 'react';
 import { InfoCard } from '../../../../shared/components/InfoCard';
+import { ContactButton } from '../../../../shared/components/ContactButton';
 
 const ResourcesSection: React.FC = () => {
   const resources = [
@@ -43,8 +44,8 @@ const ResourcesSection: React.FC = () => {
   const contactMethods = [
     {
       type: "Email",
-      value: "hello@upskiller.com",
-      link: "mailto:hello@upskiller.com",
+      value: "info@upskiller.xyz",
+      link: "mailto:info@upskiller.xyz",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -112,22 +113,13 @@ const ResourcesSection: React.FC = () => {
             <h3 className="font-heading text-3xl font-bold text-dark">Contact Us</h3>           
             <div className="grid grid-cols-2 gap-4">
               {contactMethods.map((method, index) => (
-                <a 
+                <ContactButton
                   key={index}
-                  href={method.link}
-                  target={method.type === 'GitHub' ? '_blank' : undefined}
-                  rel={method.type === 'GitHub' ? 'noopener noreferrer' : undefined}
-                  className="flex items-center space-x-4 p-4 hover:opacity-80 transition-all duration-200"
-                  style={{ backgroundColor: '#33de95' }}
-                >
-                  <div className="w-10 h-10 bg-primary-500/20 rounded-lg flex items-center justify-center text-primary-400">
-                    {method.icon}
-                  </div>
-                  <div>
-                    <div className="font-medium text-dark">{method.type}</div>
-                    <div className="text-dark text-sm">{method.value}</div>
-                  </div>
-                </a>
+                  type={method.type}
+                  value={method.value}
+                  link={method.link}
+                  icon={method.icon}
+                />
               ))}
             </div>
           </div>
