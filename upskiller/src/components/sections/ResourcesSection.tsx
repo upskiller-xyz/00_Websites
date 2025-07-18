@@ -148,12 +148,7 @@ const ResourcesSection: React.FC = () => {
         <div className="bg-gray-800 rounded-2xl p-8 mb-16">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <h3 className="font-heading text-3xl font-bold">Contact Us</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Have questions about our products? Need technical support? Want to discuss 
-                a potential collaboration? We'd love to hear from you.
-              </p>
-              
+              <h3 className="font-heading text-3xl font-bold">Contact Us</h3>           
               <div className="space-y-4">
                 {contactMethods.map((method, index) => (
                   <a 
@@ -171,38 +166,6 @@ const ResourcesSection: React.FC = () => {
                   </a>
                 ))}
               </div>
-            </div>
-            
-            {/* Quick Contact Form */}
-            <div className="space-y-6">
-              <h4 className="font-heading text-xl font-bold">Send us a message</h4>
-              <form className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <input 
-                    type="text" 
-                    placeholder="Name"
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
-                  />
-                  <input 
-                    type="email" 
-                    placeholder="Email"
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
-                  />
-                </div>
-                <input 
-                  type="text" 
-                  placeholder="Subject"
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
-                />
-                <textarea 
-                  rows={4}
-                  placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
-                ></textarea>
-                <button className="w-full bg-primary-600 text-white font-medium py-3 rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                  Send Message
-                </button>
-              </form>
             </div>
           </div>
         </div>

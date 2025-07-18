@@ -63,7 +63,7 @@ const ProductsSection: React.FC = () => {
   };
 
   return (
-    <section id="products" className="section-container bg-gray-50">
+    <section id="products" className="section-container" style={{ backgroundColor: '#99efca' }}>
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
@@ -83,7 +83,8 @@ const ProductsSection: React.FC = () => {
             return (
               <div 
                 key={index}
-                className={`bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 ${isUpcoming ? 'opacity-90' : ''}`}
+                className={`p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 ${isUpcoming ? 'opacity-90' : ''}`}
+                style={{ backgroundColor: '#00d67a' }}
               >
                 <div className="space-y-6">
                   {/* Header */}
@@ -91,14 +92,7 @@ const ProductsSection: React.FC = () => {
                     <div className={`w-16 h-16 ${colors.iconBg} rounded-xl flex items-center justify-center ${colors.iconText}`}>
                       {product.icon}
                     </div>
-                    
-                    {isUpcoming && (
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">
-                        Coming Soon
-                      </span>
-                    )}
                   </div>
-                  
                   {/* Product Info */}
                   <div className="space-y-3">
                     <div>
@@ -130,39 +124,33 @@ const ProductsSection: React.FC = () => {
                   </div>
                   
                   {/* Action Button */}
-                  <button 
-                    className={`w-full ${colors.button} text-white font-medium py-3 rounded-lg transition-colors duration-200`}
-                    disabled={isUpcoming}
-                  >
-                    {isUpcoming ? 'Notify Me When Available' : 'Learn More'}
-                  </button>
+                  {!isUpcoming && (
+                    <button 
+                      className={`w-full text-dark font-medium py-3 transition-colors duration-200`}
+                      style={{ backgroundColor: '#00ff66', borderRadius: 0 }}
+                    >
+                      Learn More
+                    </button>
+                  )}
                 </div>
               </div>
             );
           })}
-        </div>
-        
-        {/* Additional Info */}
-        <div className="mt-16 text-center bg-white rounded-2xl p-8 border border-gray-100">
-          <h3 className="font-heading text-2xl font-bold text-dark mb-4">
-            Need Custom Solutions?
-          </h3>
-          <p className="text-dark mb-6 max-w-2xl mx-auto">
-            Our team can develop tailored tools and integrations to meet your specific 
-            environmental analysis and sustainable design requirements.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200">
-              Contact Sales
-            </button>
-            <button className="border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-lg font-medium hover:bg-primary-600 hover:text-white transition-colors duration-200">
-              View Documentation
-            </button>
-          </div>
         </div>
       </div>
     </section>
   );
 };
 
+                {/* Add custom CSS for LUZ hover effect */}
+                <style>{`
+                  .luz-hover-move {
+                    transition: box-shadow 0.3s, transform 0.3s;
+                  }
+                  .luz-hover-move:hover {
+                    box-shadow: 0 10px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.10);
+                    transform: translate(15px, -15px);
+                    z-index: 2;
+                  }
+                `}</style>
 export default ProductsSection;

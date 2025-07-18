@@ -135,16 +135,12 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section id="team" className="section-container bg-white">
+    <section id="team" className="section-container" style={{ backgroundColor: '#180057' }}>
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
             Our Team
           </h2>
-          <p className="text-xl text-dark max-w-3xl mx-auto">
-            Meet the passionate professionals behind Upskiller's innovative approach to 
-            sustainable building design and environmental optimization.
-          </p>
         </div>
 
         {/* Main Content Area */}
@@ -218,19 +214,6 @@ const TeamSection: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-16 text-center bg-gray-50 rounded-2xl p-8">
-          <h3 className="font-heading text-2xl font-bold text-dark mb-4">
-            Want to Join Our Mission?
-          </h3>
-          <p className="text-dark mb-6">
-            We're always looking for talented individuals who share our passion for sustainable design.
-          </p>
-          <button className="bg-primary-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200">
-            View Open Positions
-          </button>
         </div>
       </div>
     </section>
