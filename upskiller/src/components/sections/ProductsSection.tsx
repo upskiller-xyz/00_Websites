@@ -83,8 +83,9 @@ const ProductsSection: React.FC = () => {
             return (
               <div 
                 key={index}
-                className={`p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 ${isUpcoming ? 'opacity-90' : ''}`}
+                className={`p-8 shadow-sm hover:shadow-lg transition-all duration-300 ${isUpcoming ? 'opacity-90' : ''} ${product.name === 'LUZ' ? 'hover:transform hover:translate-x-2 hover:-translate-y-2 cursor-pointer' : ''}`}
                 style={{ backgroundColor: '#00d67a' }}
+                onClick={product.name === 'LUZ' ? () => window.open('https://github.com/upskiller-xyz/DaylightFactor', '_blank') : undefined}
               >
                 <div className="space-y-6">
                   {/* Header */}
@@ -124,14 +125,13 @@ const ProductsSection: React.FC = () => {
                   </div>
                   
                   {/* Action Button */}
-                  {!isUpcoming && (
-                    <button 
-                      className={`w-full text-dark font-medium py-3 transition-colors duration-200`}
-                      style={{ backgroundColor: '#00ff66', borderRadius: 0 }}
-                    >
-                      Learn More
-                    </button>
-                  )}
+                  <button 
+                    className={`w-full text-dark font-medium py-3 transition-colors duration-200 ${isUpcoming ? 'cursor-not-allowed' : ''}`}
+                    style={{ backgroundColor: isUpcoming ? '#33de95' : '#00ff66', borderRadius: 0 }}
+                    disabled={isUpcoming}
+                  >
+                    {isUpcoming ? 'Coming Soon' : 'Learn More'}
+                  </button>
                 </div>
               </div>
             );
@@ -141,16 +141,4 @@ const ProductsSection: React.FC = () => {
     </section>
   );
 };
-
-                {/* Add custom CSS for LUZ hover effect */}
-                <style>{`
-                  .luz-hover-move {
-                    transition: box-shadow 0.3s, transform 0.3s;
-                  }
-                  .luz-hover-move:hover {
-                    box-shadow: 0 10px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.10);
-                    transform: translate(15px, -15px);
-                    z-index: 2;
-                  }
-                `}</style>
 export default ProductsSection;
