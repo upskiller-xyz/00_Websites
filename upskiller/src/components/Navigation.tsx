@@ -79,22 +79,25 @@ const Navigation: React.FC = () => {
             ))}
           </div>
           
-          {/* Green CTA button - always visible */}
-          <button
-            onClick={() => scrollToSection('resources')}
-            className="px-4 py-2 text-dark font-medium transition-all duration-200 hover:opacity-90"
-            style={{ backgroundColor: '#00FF66' }}
-          >
-            Contact us
-          </button>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button className="text-dark hover:text-primary-600">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+          {/* Right side - Contact button and mobile menu */}
+          <div className="flex items-center space-x-4">
+            {/* Green CTA button - always visible and aligned right on mobile */}
+            <button
+              onClick={() => scrollToSection('resources')}
+              className="px-4 py-2 text-dark font-medium transition-all duration-200 hover:opacity-90"
+              style={{ backgroundColor: '#00FF66' }}
+            >
+              Contact us
             </button>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button className="text-dark hover:text-primary-600">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
