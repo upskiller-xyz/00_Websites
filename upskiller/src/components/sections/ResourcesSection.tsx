@@ -100,7 +100,7 @@ const ResourcesSection: React.FC = () => {
               itemsLabel="What you'll find:"
               buttonText={resource.hasButton ? `Explore ${resource.title}` : undefined}
               showButton={resource.hasButton}
-              onButtonClick={() => {}}
+              onButtonClick={resource.title === 'Blog' ? () => window.open('https://upskillerxyz.substack.com', '_blank') : () => {}}
               className="hover:opacity-90 transition-all duration-300"
             />
           ))}
