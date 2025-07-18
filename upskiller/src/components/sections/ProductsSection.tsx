@@ -17,8 +17,8 @@ const ProductsSection: React.FC = () => {
       )
     },
     {
-      name: "SOL",
-      subtitle: "Graphs4Co2",
+      name: "COL",
+      subtitle: "LCA Assistant",
       description: "Comprehensive carbon footprint analysis platform for sustainable building lifecycle assessment.",
       status: "upcoming",
       features: ["CO2 tracking", "Material analysis", "Lifecycle assessment", "Sustainability reports"],
@@ -115,7 +115,7 @@ const ProductsSection: React.FC = () => {
                     <div className="grid grid-cols-2 gap-2">
                       {product.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2">
-                          <div className={`w-2 h-2 rounded-full ${isUpcoming ? 'bg-gray-400' : colors.bg}`}></div>
+                          <div className={`w-2 h-2 rounded-full ${isUpcoming && product.name === 'COL' ? '' : isUpcoming ? 'bg-gray-400' : product.name === 'LUZ' ? '' : colors.bg}`} style={isUpcoming && product.name === 'COL' ? { backgroundColor: '#4e378a' } : product.name === 'LUZ' ? { backgroundColor: '#4e378a' } : {}}></div>
                           <span className="text-sm text-dark">
                             {feature}
                           </span>

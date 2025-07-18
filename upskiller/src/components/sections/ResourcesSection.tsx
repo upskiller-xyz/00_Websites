@@ -108,35 +108,31 @@ const ResourcesSection: React.FC = () => {
           {resources.map((resource, index) => (
             <div 
               key={index}
-              className="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition-colors duration-300"
+              className="p-8 hover:opacity-90 transition-all duration-300"
+              style={{ backgroundColor: '#00d67a' }}
             >
               <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className={`w-12 h-12 ${resource.color === 'blue' ? 'bg-blue-500/20' : 'bg-purple-500/20'} rounded-lg flex items-center justify-center`}>
-                    <div className={resource.color === 'blue' ? 'text-blue-400' : 'text-purple-400'}>
-                      {resource.icon}
-                    </div>
-                  </div>
-                  <h3 className="font-heading text-2xl font-bold">{resource.title}</h3>
+                <div>
+                  <h3 className="font-heading text-2xl font-bold text-dark">{resource.title}</h3>
                 </div>
                 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-dark leading-relaxed">
                   {resource.description}
                 </p>
                 
                 <div className="space-y-2">
-                  <h4 className="font-medium text-white">What you'll find:</h4>
+                  <h4 className="font-medium text-dark">What you'll find:</h4>
                   <ul className="space-y-1">
                     {resource.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-center space-x-2 text-gray-300">
-                        <div className={`w-2 h-2 rounded-full ${resource.color === 'blue' ? 'bg-blue-400' : 'bg-purple-400'}`}></div>
+                      <li key={itemIndex} className="flex items-center space-x-2 text-dark">
+                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#4e378a' }}></div>
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
-                <button className={`w-full ${resource.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-purple-600 hover:bg-purple-700'} text-white font-medium py-3 rounded-lg transition-colors duration-200`}>
+                <button className="w-full text-dark font-medium py-3 transition-colors duration-200" style={{ backgroundColor: '#00ff66', borderRadius: 0 }}>
                   Explore {resource.title}
                 </button>
               </div>
@@ -145,27 +141,28 @@ const ResourcesSection: React.FC = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="bg-gray-800 rounded-2xl p-8 mb-16">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h3 className="font-heading text-3xl font-bold">Contact Us</h3>           
-              <div className="space-y-4">
-                {contactMethods.map((method, index) => (
-                  <a 
-                    key={index}
-                    href={method.link}
-                    className="flex items-center space-x-4 p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-200"
-                  >
-                    <div className="w-10 h-10 bg-primary-500/20 rounded-lg flex items-center justify-center text-primary-400">
-                      {method.icon}
-                    </div>
-                    <div>
-                      <div className="font-medium text-white">{method.type}</div>
-                      <div className="text-gray-300 text-sm">{method.value}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
+        <div className="p-8 mb-16" style={{ backgroundColor: '#00d67a' }}>
+          <div className="space-y-6">
+            <h3 className="font-heading text-3xl font-bold text-dark">Contact Us</h3>           
+            <div className="grid grid-cols-2 gap-4">
+              {contactMethods.map((method, index) => (
+                <a 
+                  key={index}
+                  href={method.link}
+                  target={method.type === 'GitHub' ? '_blank' : undefined}
+                  rel={method.type === 'GitHub' ? 'noopener noreferrer' : undefined}
+                  className="flex items-center space-x-4 p-4 hover:opacity-80 transition-all duration-200"
+                  style={{ backgroundColor: '#33de95' }}
+                >
+                  <div className="w-10 h-10 bg-primary-500/20 rounded-lg flex items-center justify-center text-primary-400">
+                    {method.icon}
+                  </div>
+                  <div>
+                    <div className="font-medium text-dark">{method.type}</div>
+                    <div className="text-dark text-sm">{method.value}</div>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
