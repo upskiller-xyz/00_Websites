@@ -1,5 +1,6 @@
 // src/components/Navigation.tsx
 import React, { useState, useEffect } from 'react';
+import { SharedButton } from '../../../shared/components/SharedButton';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,7 +51,7 @@ const Navigation: React.FC = () => {
           {/* Logo - always floating */}
           <button
             onClick={() => scrollToSection('home')}
-            className="transition-opacity duration-200 hover:opacity-80"
+            className="transition-opacity duration-200 hover:opacity-80 cursor-pointer"
           >
             <img
               src="/images/upskiller_logo_RGB.svg"
@@ -67,7 +68,7 @@ const Navigation: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors duration-200 ${
+                className={`transition-colors duration-200 cursor-pointer ${
                   activeSection === item.id
                     ? 'font-medium'
                     : 'hover:opacity-80'
@@ -82,17 +83,17 @@ const Navigation: React.FC = () => {
           {/* Right side - Contact button and mobile menu */}
           <div className="flex items-center space-x-4">
             {/* Green CTA button - always visible and aligned right on mobile */}
-            <button
+            <SharedButton
+              variant="contact"
+              size="sm"
               onClick={() => scrollToSection('resources')}
-              className="px-4 py-2 text-dark font-medium transition-all duration-200 hover:opacity-90"
-              style={{ backgroundColor: '#00FF66' }}
             >
               Contact us
-            </button>
+            </SharedButton>
             
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <button className="text-dark hover:text-primary-600">
+              <button className="text-dark hover:text-primary-600 cursor-pointer">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>

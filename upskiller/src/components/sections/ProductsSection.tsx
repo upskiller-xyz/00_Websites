@@ -1,5 +1,6 @@
 // src/components/sections/ProductsSection.tsx
 import React from 'react';
+import { InfoCard } from '../../../../shared/components/InfoCard';
 
 const ProductsSection: React.FC = () => {
   const products = [
@@ -31,36 +32,6 @@ const ProductsSection: React.FC = () => {
     }
   ];
 
-  const getColorClasses = (color: string, status: string) => {
-    const isUpcoming = status === 'upcoming';
-    
-    switch (color) {
-      case 'primary':
-        return {
-          bg: isUpcoming ? 'bg-gray-400' : 'bg-primary-500',
-          iconBg: isUpcoming ? 'bg-gray-100' : 'bg-primary-100',
-          iconText: isUpcoming ? 'text-dark' : 'text-primary-600',
-          badge: isUpcoming ? 'bg-gray-50 text-dark' : 'bg-primary-50 text-primary-700',
-          button: isUpcoming ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-500 hover:bg-primary-600'
-        };
-      case 'accent':
-        return {
-          bg: isUpcoming ? 'bg-gray-400' : 'bg-accent',
-          iconBg: isUpcoming ? 'bg-gray-100' : 'bg-green-100',
-          iconText: isUpcoming ? 'text-dark' : 'text-accent',
-          badge: isUpcoming ? 'bg-gray-50 text-dark' : 'bg-green-50 text-green-700',
-          button: isUpcoming ? 'bg-gray-400 cursor-not-allowed' : 'bg-accent hover:bg-green-600'
-        };
-      default:
-        return {
-          bg: 'bg-gray-500',
-          iconBg: 'bg-gray-100',
-          iconText: 'text-dark',
-          badge: 'bg-gray-50 text-dark',
-          button: 'bg-gray-500'
-        };
-    }
-  };
 
   return (
     <section id="products" className="section-container" style={{ backgroundColor: '#99efca' }}>
@@ -77,63 +48,23 @@ const ProductsSection: React.FC = () => {
         
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {products.map((product, index) => {
-            const colors = getColorClasses(product.color, product.status);
             const isUpcoming = product.status === 'upcoming';
             
             return (
-              <div 
+              <InfoCard
                 key={index}
-                className={`p-8 shadow-sm hover:shadow-lg transition-all duration-300 ${isUpcoming ? 'opacity-90' : ''} ${product.name === 'LUZ' ? 'hover:transform hover:translate-x-2 hover:-translate-y-2 cursor-pointer' : ''}`}
-                style={{ backgroundColor: '#00d67a' }}
+                title={product.name}
+                subtitle={product.subtitle}
+                description={product.description}
+                items={product.features}
+                itemsLabel="Key Features:"
+                icon={product.icon}
+                buttonText={isUpcoming ? 'Coming Soon' : 'Learn More'}
+                buttonDisabled={isUpcoming}
                 onClick={product.name === 'LUZ' ? () => window.open('https://github.com/upskiller-xyz/DaylightFactor', '_blank') : undefined}
-              >
-                <div className="space-y-6">
-                  {/* Header */}
-                  <div className="flex items-start justify-between">
-                    <div className={`w-16 h-16 ${colors.iconBg} rounded-xl flex items-center justify-center ${colors.iconText}`}>
-                      {product.icon}
-                    </div>
-                  </div>
-                  {/* Product Info */}
-                  <div className="space-y-3">
-                    <div>
-                      <h3 className="font-heading text-3xl font-bold text-dark">
-                        {product.name}
-                      </h3>
-                      <p className="text-lg text-dark font-medium">
-                        {product.subtitle}
-                      </p>
-                    </div>
-                    <p className="text-dark leading-relaxed">
-                      {product.description}
-                    </p>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="space-y-3">
-                    <h4 className="font-medium text-dark">Key Features:</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {product.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                          <div className={`w-2 h-2 rounded-full ${isUpcoming && product.name === 'COL' ? '' : isUpcoming ? 'bg-gray-400' : product.name === 'LUZ' ? '' : colors.bg}`} style={isUpcoming && product.name === 'COL' ? { backgroundColor: '#4e378a' } : product.name === 'LUZ' ? { backgroundColor: '#4e378a' } : {}}></div>
-                          <span className="text-sm text-dark">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Action Button */}
-                  <button 
-                    className={`w-full text-dark font-medium py-3 transition-colors duration-200 ${isUpcoming ? 'cursor-not-allowed' : ''}`}
-                    style={{ backgroundColor: isUpcoming ? '#33de95' : '#00ff66', borderRadius: 0 }}
-                    disabled={isUpcoming}
-                  >
-                    {isUpcoming ? 'Coming Soon' : 'Learn More'}
-                  </button>
-                </div>
-              </div>
+                onButtonClick={() => {}}
+                className={`${isUpcoming ? 'opacity-90' : ''} ${product.name === 'LUZ' ? 'hover:transform hover:translate-x-2 hover:-translate-y-2 cursor-pointer' : ''}`}
+              />
             );
           })}
         </div>
