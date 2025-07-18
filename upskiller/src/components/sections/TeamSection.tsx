@@ -138,35 +138,20 @@ const TeamSection: React.FC = () => {
     <section id="team" className="section-container" style={{ backgroundColor: '#180057' }}>
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold" style={{ color: '#f4fffa' }}>
             Our Team
           </h2>
         </div>
 
         {/* Main Content Area */}
-        <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-2xl overflow-hidden">
+        <div className="overflow-hidden" style={{ backgroundColor: '#00d67a' }}>
           {/* Team Photo - Always visible */}
-          <div className="h-96 bg-gradient-to-r from-orange-200 to-orange-300 relative">
-            {/* Placeholder for team photo */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-full h-full bg-gradient-to-r from-orange-400 to-red-400 opacity-30 absolute inset-0"></div>
-                <div className="relative z-10 flex space-x-8 items-center justify-center h-full">
-                  <div className="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">A</span>
-                  </div>
-                  <div className="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">L</span>
-                  </div>
-                  <div className="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">S</span>
-                  </div>
-                  <div className="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">C</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="h-[500px] relative overflow-hidden">
+            <img 
+              src="/images/20250315_Stockholm (5).jpg" 
+              alt="Upskiller Team" 
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Content Area */}
@@ -196,24 +181,25 @@ const TeamSection: React.FC = () => {
                 />
               </div>
 
-              {/* Tab Navigation */}
-              <div className="flex flex-wrap justify-center gap-2">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                      activeTab === tab.id
-                        ? 'bg-primary-600 text-white shadow-lg'
-                        : 'bg-white text-dark hover:bg-gray-50 border border-gray-200'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
             </div>
           </div>
+        </div>
+
+        {/* Tab Navigation - Stretching to side edges of main container */}
+        <div className="flex gap-1">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex-1 py-3 font-medium transition-all duration-200 cursor-pointer`}
+              style={{
+                backgroundColor: activeTab === tab.id ? '#00d67a' : '#99efca',
+                color: '#000000'
+              }}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
     </section>
