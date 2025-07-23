@@ -66,6 +66,11 @@ const ResourcesSection: React.FC = () => {
 
   const socialLinks = [
     {
+      name: "Substack", 
+      url: "http://upskiller.substack.com/",
+      icon: "/images/substack.png"
+    },
+    {
       name: "LinkedIn",
       url: "https://www.linkedin.com/company/upskiller-xyz/",
       icon: "/images/linkedin-dark.svg"
@@ -85,8 +90,16 @@ const ResourcesSection: React.FC = () => {
             Resources
           </h2>
           <p className="text-xl max-w-3xl mx-auto" style={{ color: '#f4fffa' }}>
-            Access our knowledge base, stay updated with industry news, and connect with our team 
-            for support and collaboration opportunities.
+            Our knowledge base is not fully here yet, but we are working on making it open and accessible to everyone! Have to prioritize <a href="https://github.com/upskiller-xyz/Lux"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary-600 underline"
+        >Lux</a> and <a
+        href="https://github.com/upskiller-xyz/Col"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary-600 underline"
+        >Col</a> first:)
           </p>
         </div>
 

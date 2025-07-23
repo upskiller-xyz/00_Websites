@@ -7,7 +7,8 @@ const ProductsSection: React.FC = () => {
     {
       name: "LUZ",
       subtitle: "Daylight Factor",
-      description: "Advanced daylight analysis tool that helps architects and engineers optimize natural lighting in building designs.",
+      problem: "Daylight simulation is slow and incures costs when done late in the design process.",
+      description: "Fast daylight analysis tool that helps architects and engineers optimize natural lighting in building designs.",
       status: "available",
       features: ["Real-time calculations", "3D visualization", "Building code compliance", "Export capabilities"],
       color: "primary",
@@ -20,7 +21,8 @@ const ProductsSection: React.FC = () => {
     {
       name: "COL",
       subtitle: "LCA Assistant",
-      description: "Comprehensive carbon footprint analysis platform for sustainable building lifecycle assessment.",
+      problem: "Carbon footprint analysis is complex and requires specifc knowledge. It will become mandatory in the future, but the accessibility barrier is high.",
+      description: "Accessible carbon footprint analysis tool that helps assess building performance.",
       status: "upcoming",
       features: ["CO2 tracking", "Material analysis", "Lifecycle assessment", "Sustainability reports"],
       color: "accent",
@@ -38,11 +40,11 @@ const ProductsSection: React.FC = () => {
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
-            Our Products
+            We are working on
           </h2>
           <p className="text-xl text-dark max-w-3xl mx-auto">
-            Cutting-edge tools designed to revolutionize sustainable building design 
-            and environmental optimization for architects and engineers.
+            Building tools is fun. We think it's even more fun when they are useful for the community and help solve real problems in the industry. 
+            These are some of the tools developed as a solution to the problems we are studying.
           </p>
         </div>
         
@@ -55,11 +57,12 @@ const ProductsSection: React.FC = () => {
                 key={index}
                 title={product.name}
                 subtitle={product.subtitle}
+                problem={product.problem}
                 description={product.description}
                 items={product.features}
                 itemsLabel="Key Features:"
                 icon={product.icon}
-                buttonText={isUpcoming ? 'Coming Soon' : 'Learn More'}
+                buttonText={isUpcoming ? 'Coming Soon' : 'Try Now'}
                 buttonDisabled={isUpcoming}
                 onClick={product.name === 'LUZ' ? () => window.open('https://github.com/upskiller-xyz/DaylightFactor', '_blank') : undefined}
                 onButtonClick={() => {}}
