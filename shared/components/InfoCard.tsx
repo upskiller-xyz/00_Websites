@@ -21,6 +21,7 @@ interface InfoCardProps {
 const InfoCard: React.FC<InfoCardProps> = ({
   title,
   subtitle,
+  problem,
   description,
   items,
   itemsLabel = "Key Features:",
@@ -65,8 +66,13 @@ const InfoCard: React.FC<InfoCardProps> = ({
               </p>
             )}
           </div>
+          {problem && (
+            <p className="text-dark leading-relaxed">
+              <strong>Problem:</strong> {problem}
+            </p>
+          )}
           <p className="text-dark leading-relaxed">
-            {description}
+            <strong>Solution:</strong> {description}
           </p>
         </div>
         

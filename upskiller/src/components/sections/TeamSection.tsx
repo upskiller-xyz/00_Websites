@@ -17,14 +17,14 @@ const TeamSection: React.FC = () => {
       >
         MaCAD
       </a>
-      ), where Stasja taught and we studied. Together, we developed several promising machine learning prototypes, including a daylight predictive model that caught the attention of the academic community and was published in a <a
+      ), where Stasja taught a course in ML algorithms that we studied. Together, we developed several promising machine learning prototypes, including a daylight predictive model that caught the attention of the academic community and was published in a <a
         href="https://www.sciencedirect.com/science/article/abs/pii/S0360132325002252"
         target="_blank"
         rel="noopener noreferrer"
         className="text-primary-600 underline"
       >high-impact journal</a>.
     </>,
-    <>This success sparked an idea: why not adapt this model for Swedish regulations? We applied for funding and were thrilled to receive a grant from the <a
+    <>This success sparked an idea: why not adapt this model for Swedish regulations? We applied for funding and received a grant from the <a
       href="https://belysningsstiftelsen.se/projekt/alejandro-pacheco-dieguez-ml-modell-for-dagsljusanalys"
       target="_blank"
       rel="noopener noreferrer"
@@ -34,8 +34,11 @@ const TeamSection: React.FC = () => {
       target="_blank"
       rel="noopener noreferrer"
       className="text-primary-600 underline"
-    >buzz</a> in the industry, and after a couple of months working together, we've discovered something even more valuable: we make a great team. Our recent acceptance by Almi, Sweden's business development agency, supports that. </>,
-    "With complementary skills and a growing network of industry connections, we're excited about what's next. If you'd like to connect, drop us a line or reach out to any of us directly."
+    >buzz</a> in the industry, and after a couple of months working together, we've discovered something even more valuable: we make a great team. <a href="https://www.almi.se/" target="_blank"rel="noopener noreferrer"
+      className="text-primary-600 underline">Almi</a>, Sweden's business development agency, thinks so too. </>,
+    <>No-bs and no-buzzwords, effectiveness and transparency are values that we found in common, no matter the project we are working on. We want to understand the problem and provide a solution that works, not just a fancy tool that looks good on paper. Does it resonate? 
+    <a href="mailto:info@upskiller.xyz" target="_blank"rel="noopener noreferrer"
+      className="text-primary-600 underline">Reach out</a> to us, we love virtual coffee chats."</>,
   ];
 
   type TeamTab = {
@@ -68,7 +71,7 @@ const TeamSection: React.FC = () => {
           teachingExperience="Lund?"
           workExperience="BAU, White Arkitekter."
           favLLM="GPT."
-          fact="It is not Libny's brother."
+          fact="He is not Libny's brother."
         />
       ),
       socials: "<a href=\"mailto:alejandro.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">alejandro.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/alejandro-pacheco-diéguez-06b1b238/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
@@ -85,7 +88,7 @@ const TeamSection: React.FC = () => {
           teachingExperience="Universidad de los Andes, Tsinghua University, IAAC."
           workExperience="Plasma Studio, Crossboundaries, White Arkitekter."
           favLLM="Claude."
-          fact="It is not Alejandro's brother."
+          fact="He is not Alejandro's brother."
         />
       ),
       socials: "<a href=\"mailto:libny.pacheco@upskiller.xyz\" class=\"text-primary-600 underline\">libny.pacheco@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/libny-pacheco-6548b95/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
@@ -98,14 +101,14 @@ const TeamSection: React.FC = () => {
       ),
       extra: (
         <ListBoldKeyLightValue
-          graduatedAs="Architect with master in Data Science."
-          teachingExperience="Umeå University, IAAC."
-          workExperience="ELSE Corp, Rave Review, H&M."
-          favLLM="Claude?."
-          fact="Enjoys trail running."
+          graduatedAs="Doesn't matter, studies continuously"
+          teachingExperience="Iaac, Umeå University, PoliMi."
+          workExperience="H&M, AECinCode, ELSE-Corp"
+          favLLM="Claude / Gemini"
+          fact="Studies medieval Swedish, energy sector and food science"
         />
       ),
-      socials: "<a href=\"mailto:stasja.fedorova@upskiller.xyz\" class=\"text-primary-600 underline\">stasja.fedorova@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/stasja-fedorova/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
+      socials: "<a href=\"mailto:stasja.fedorova@upskiller.xyz\" class=\"text-primary-600 underline\">stasja.fedorova@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/stasja-fedorova/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a> | <a href=\"http://aecincode.substack.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">AECinCode</a>"
     },
     christoph: {
       content:  (
