@@ -38,7 +38,7 @@ const TeamSection: React.FC = () => {
       className="text-primary-600 underline">Almi</a>, Sweden's business development agency, thinks so too. </>,
     <>No-bs and no-buzzwords, effectiveness and transparency are values that we found in common, no matter the project we are working on. We want to understand the problem and provide a solution that works, not just a fancy tool that looks good on paper. Does it resonate? 
     <a href="mailto:info@upskiller.xyz" target="_blank"rel="noopener noreferrer"
-      className="text-primary-600 underline">Reach out</a> to us, we love virtual coffee chats."</>,
+      className="text-primary-600 underline"> Reach out</a> to us, we love virtual coffee chats."</>,
   ];
 
   type TeamTab = {
@@ -68,7 +68,7 @@ const TeamSection: React.FC = () => {
       extra: (
         <ListBoldKeyLightValue
           graduatedAs="Architect with master in environmental building design."
-          teachingExperience="Lund?"
+          teachingExperience="Lund Technical University"
           workExperience="BAU, White Arkitekter."
           favLLM="GPT."
           fact="He is not Libny's brother."
@@ -121,7 +121,7 @@ const TeamSection: React.FC = () => {
           graduatedAs="Civil Engineer with master in Advanced Computation for Architecture & Design."
           teachingExperience="Munich University of Applied Sciences."
           workExperience="Jaeger Ausbau Gruppe, PORR."
-          favLLM="Claude?."
+          favLLM="Claude"
           fact="Experienced drone pilot."
         />
       ),
@@ -151,7 +151,7 @@ const TeamSection: React.FC = () => {
           {/* Team Photo - Always visible */}
           <div className="h-[500px] relative overflow-hidden">
             <img 
-              src="/images/20250315_Stockholm (5).jpg" 
+              src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/images/upskiller_team_cyan.png" 
               alt="Upskiller Team" 
               className="w-full h-full object-cover"
             />

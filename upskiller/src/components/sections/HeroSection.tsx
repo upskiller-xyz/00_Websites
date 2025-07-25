@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
           }}
         >
           <img 
-            src="/images/motif-1.svg" 
+            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/motif-1.svg" 
             alt="" 
             className="w-full h-full object-cover"
           />
@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
           }}
         >
           <img 
-            src="/images/motif-1.svg" 
+            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/motif-1.svg" 
             alt="" 
             className="w-full h-full object-cover"
           />

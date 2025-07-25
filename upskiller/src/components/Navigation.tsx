@@ -1,6 +1,6 @@
 // src/components/Navigation.tsx
 import React, { useState, useEffect } from 'react';
-import { SharedButton } from '../../../shared/components/SharedButton';
+import { SharedButton } from '@shared/components/SharedButton';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +54,7 @@ const Navigation: React.FC = () => {
             className="transition-opacity duration-200 hover:opacity-80 cursor-pointer"
           >
             <img
-              src="/images/upskiller_logo_RGB.svg"
+              src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/upskiller_logo_RGB.svg"
               alt="Upskiller"
               className="h-8 w-auto"
             />
