@@ -68,17 +68,17 @@ const ResourcesSection: React.FC = () => {
     {
       name: "Substack", 
       url: "http://upskiller.substack.com/",
-      icon: "/images/substack.png"
+      icon: "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/substack.png"
     },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/company/upskiller-xyz/",
-      icon: "/images/linkedin-dark.svg"
+      icon: "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/linkedin-dark.svg"
     },
     {
       name: "Instagram", 
       url: "https://www.instagram.com/upskiller.xyz",
-      icon: "/images/instagram-dark.svg"
+      icon: "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/instagram-dark.svg"
     }
   ];
 

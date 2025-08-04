@@ -4,6 +4,7 @@ import { SharedButton } from './SharedButton';
 interface InfoCardProps {
   title: string;
   subtitle?: string;
+  problem?: string;
   description: string;
   items: string[];
   itemsLabel?: string;
@@ -93,15 +94,16 @@ const InfoCard: React.FC<InfoCardProps> = ({
         
         {/* Action Button */}
         {showButton && buttonText && (
-          <SharedButton
-            variant="contact"
-            className="w-full"
-            style={finalButtonStyle}
-            onClick={onButtonClick}
-            disabled={buttonDisabled}
-          >
-            {buttonText}
-          </SharedButton>
+          <div style={finalButtonStyle}>
+            <SharedButton
+              variant="contact"
+              className="w-full"
+              onClick={onButtonClick}
+              disabled={buttonDisabled}
+            >
+              {buttonText}
+            </SharedButton>
+          </div>
         )}
       </div>
     </div>
