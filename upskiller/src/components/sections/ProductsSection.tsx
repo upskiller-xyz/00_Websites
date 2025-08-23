@@ -40,11 +40,10 @@ const ProductsSection: React.FC = () => {
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark">
-            We are working on
+            We're working on
           </h2>
           <p className="text-xl text-dark max-w-3xl mx-auto">
-            Building tools is fun. We think it's even more fun when they are useful for the community and help solve real problems in the industry. 
-            These are some of the tools developed as a solution to the problems we are studying.
+            These are some of the tools developed as a solution to the problems we're studying.
           </p>
         </div>
         
@@ -64,9 +63,9 @@ const ProductsSection: React.FC = () => {
                 icon={product.icon}
                 buttonText={isUpcoming ? 'Coming Soon' : 'Try Now'}
                 buttonDisabled={isUpcoming}
-                onClick={product.name === 'LUZ' ? () => window.open('https://github.com/upskiller-xyz/DaylightFactor', '_blank') : undefined}
+                onClick={product.name === 'LUX' ? () => window.open('https://github.com/upskiller-xyz/DaylightFactor', '_blank') : undefined}
                 onButtonClick={() => {}}
-                className={`${isUpcoming ? 'opacity-90' : ''} ${product.name === 'LUZ' ? 'hover:transform hover:translate-x-2 hover:-translate-y-2 cursor-pointer' : ''}`}
+                className={`${isUpcoming ? 'opacity-90' : ''} ${product.name === 'LUX' ? 'hover:transform hover:translate-x-2 hover:-translate-y-2 cursor-pointer' : ''}`}
               />
             );
           })}
