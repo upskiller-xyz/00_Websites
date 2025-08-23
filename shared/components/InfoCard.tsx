@@ -43,59 +43,65 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
   return (
     <div 
-      className={`p-8 transition-all duration-300 ${className}`}
+      className={`transition-all duration-300 flex flex-col h-full ${className}`}
       style={style}
       onClick={onClick}
     >
-      <div className="space-y-6">
-        {/* Header with Icon */}
-        {icon && (
-          <div className="flex items-start justify-between">
-            <div className="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600">
-              {icon}
+      {/* Content Area with padding */}
+      <div className="p-8 flex-grow flex flex-col justify-between">
+        {/* Top Content */}
+        <div className="space-y-6">
+          {/* Header with Icon */}
+          {icon && (
+            <div className="w-full">
+              <div className="w-full flex items-center justify-center">
+                {icon}
+              </div>
             </div>
-          </div>
-        )}
-        
-        {/* Title and Description */}
-        <div className="space-y-3">
-          <div>
-            <h3 className="font-heading font-bold text-dark text-3xl">
-              {title}
-            </h3>
-            {subtitle && (
-              <p className="text-lg text-dark font-medium">
-                {subtitle}
+          )}
+          
+          {/* Title and Description */}
+          <div className="space-y-3">
+            <div>
+              <h3 className="font-heading font-bold text-dark text-3xl">
+                {title}
+              </h3>
+              {subtitle && (
+                <p className="text-lg text-dark font-medium">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+            {problem && (
+              <p className="text-dark leading-relaxed">
+                <strong>Problem:</strong> {problem}
               </p>
             )}
-          </div>
-          {problem && (
             <p className="text-dark leading-relaxed">
-              <strong>Problem:</strong> {problem}
+              {descriptionLabel && <strong>{descriptionLabel}:</strong>} {description}
             </p>
-          )}
-          <p className="text-dark leading-relaxed">
-            {descriptionLabel && <strong>{descriptionLabel}:</strong>} {description}
-          </p>
-        </div>
-        
-        {/* Items List */}
-        <div className="space-y-3">
-          <h4 className="font-medium text-dark">{itemsLabel}</h4>
-          <div className="space-y-2">
-            {items.map((item, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#4e378a' }}></div>
-                <span className="text-sm text-dark">
-                  {item}
-                </span>
-              </div>
-            ))}
+          </div>
+          
+          {/* Items List */}
+          <div className="space-y-3">
+            <h4 className="font-medium text-dark">{itemsLabel}</h4>
+            <div className="space-y-2">
+              {items.map((item, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#4e378a' }}></div>
+                  <span className="text-sm text-dark">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        
-        {/* Action Button */}
-        {showButton && buttonText && (
+      </div>
+      
+      {/* Button Area with its own padding */}
+      {showButton && buttonText && (
+        <div className="p-8 pt-0">
           <div 
             style={{
               ...finalButtonStyle,
@@ -121,8 +127,8 @@ const InfoCard: React.FC<InfoCardProps> = ({
               {buttonText}
             </SharedButton>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -89,18 +89,6 @@ const ResourcesSection: React.FC = () => {
           <h2 className="font-heading text-4xl lg:text-5xl font-bold" style={{ color: '#f4fffa' }}>
             Resources
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#f4fffa' }}>
-            Our knowledge base is not fully here yet, but we are working on making it open and accessible to everyone! Have to prioritize <a href="https://github.com/upskiller-xyz/Lux"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary-600 underline"
-        >Lux</a> and <a
-        href="https://github.com/upskiller-xyz/Col"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary-600 underline"
-        >Col</a> first:)
-          </p>
         </div>
 
         {/* Resources Grid */}
