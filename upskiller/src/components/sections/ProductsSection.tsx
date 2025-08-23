@@ -60,12 +60,13 @@ const ProductsSection: React.FC = () => {
                 description={product.description}
                 items={product.features}
                 itemsLabel="Key Features:"
+                descriptionLabel="Solution"
                 icon={product.icon}
                 buttonText={isUpcoming ? 'Coming Soon' : 'Try Now'}
                 buttonDisabled={isUpcoming}
-                onClick={product.name === 'LUX' ? () => window.open('https://github.com/upskiller-xyz/DaylightFactor', '_blank') : undefined}
-                onButtonClick={() => {}}
-                className={`${isUpcoming ? 'opacity-90' : ''} ${product.name === 'LUX' ? 'hover:transform hover:translate-x-2 hover:-translate-y-2 cursor-pointer' : ''}`}
+                onClick={product.name === 'LUZ' ? () => window.open('https://github.com/upskiller-xyz/Lux', '_blank') : undefined}
+                onButtonClick={product.name === 'LUZ' ? () => window.open('https://github.com/upskiller-xyz/Lux', '_blank') : () => {}}
+                className={`${isUpcoming ? 'opacity-90' : ''} ${product.name === 'LUZ' ? 'cursor-pointer' : ''}`}
               />
             );
           })}

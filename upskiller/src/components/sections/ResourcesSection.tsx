@@ -23,7 +23,7 @@ const ResourcesSection: React.FC = () => {
       hasButton: false
     },
     {
-      title: "Blog",
+      title: "Articles",
       description: "Deep dives into technical topics, best practices, and thought leadership in environmental optimization.",
       items: [
         "Technical tutorials and guides",
@@ -112,10 +112,10 @@ const ResourcesSection: React.FC = () => {
               description={resource.description}
               items={resource.items}
               itemsLabel="What you'll find:"
-              buttonText={resource.hasButton ? `Explore ${resource.title}` : undefined}
+              buttonText={resource.hasButton ? (resource.title === 'Articles' ? 'Visit our Substack' : `Visit our ${resource.title}`) : undefined}
               showButton={resource.hasButton}
-              onButtonClick={resource.title === 'Blog' ? () => window.open('https://upskillerxyz.substack.com', '_blank') : () => {}}
-              className="hover:opacity-90 transition-all duration-300"
+              onButtonClick={resource.title === 'Articles' ? () => window.open('https://upskillerxyz.substack.com', '_blank') : () => {}}
+              className="transition-all duration-300"
             />
           ))}
         </div>
@@ -149,9 +149,15 @@ const ResourcesSection: React.FC = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center transition-opacity duration-200 hover:opacity-80"
+                className="w-12 h-12 flex items-center justify-center transition-opacity duration-200 hover:opacity-80 hover:scale-110 transform transition-transform"
+                title={`Follow us on ${social.name}`}
               >
-                <div className="w-12 h-12" style={{ backgroundColor: '#4e378a', mask: `url(${social.icon}) no-repeat center`, maskSize: 'contain', WebkitMask: `url(${social.icon}) no-repeat center`, WebkitMaskSize: 'contain' }}></div>
+                <img 
+                  src={social.icon} 
+                  alt={`${social.name} icon`}
+                  className="w-10 h-10 object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(30%) sepia(27%) saturate(1752%) hue-rotate(237deg) brightness(93%) contrast(86%)' }}
+                />
               </a>
             ))}
           </div>

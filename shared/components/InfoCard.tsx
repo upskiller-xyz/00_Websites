@@ -8,6 +8,7 @@ interface InfoCardProps {
   description: string;
   items: string[];
   itemsLabel?: string;
+  descriptionLabel?: string;
   icon?: React.ReactNode;
   buttonText?: string;
   buttonDisabled?: boolean;
@@ -26,6 +27,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   description,
   items,
   itemsLabel = "Key Features:",
+  descriptionLabel,
   icon,
   buttonText,
   buttonDisabled = false,
@@ -41,7 +43,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
   return (
     <div 
-      className={`p-8 shadow-sm hover:shadow-lg transition-all duration-300 ${className}`}
+      className={`p-8 transition-all duration-300 ${className}`}
       style={style}
       onClick={onClick}
     >
@@ -58,7 +60,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
         {/* Title and Description */}
         <div className="space-y-3">
           <div>
-            <h3 className={`font-heading font-bold text-dark ${subtitle ? 'text-3xl' : 'text-2xl'}`}>
+            <h3 className="font-heading font-bold text-dark text-3xl">
               {title}
             </h3>
             {subtitle && (
@@ -73,7 +75,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
             </p>
           )}
           <p className="text-dark leading-relaxed">
-            <strong>Solution:</strong> {description}
+            {descriptionLabel && <strong>{descriptionLabel}:</strong>} {description}
           </p>
         </div>
         
@@ -94,7 +96,22 @@ const InfoCard: React.FC<InfoCardProps> = ({
         
         {/* Action Button */}
         {showButton && buttonText && (
-          <div style={finalButtonStyle}>
+          <div 
+            style={{
+              ...finalButtonStyle,
+              transition: 'transform 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              if (!buttonDisabled) {
+                e.currentTarget.style.transform = 'translate(15px, -15px)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!buttonDisabled) {
+                e.currentTarget.style.transform = 'translate(0px, 0px)';
+              }
+            }}
+          >
             <SharedButton
               variant="contact"
               className="w-full"
