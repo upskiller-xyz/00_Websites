@@ -1,27 +1,71 @@
 // src/components/sections/HeroSection.tsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const HeroSection: React.FC = () => {
   const staticMotifRef = useRef<HTMLDivElement>(null);
   const movingMotifRef = useRef<HTMLDivElement>(null);
+  const textContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visibleElements, setVisibleElements] = useState<number[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scrollFactor = scrollY * 0.5; // Adjust speed of parallax
+      const scrollFactor = scrollY * 0.5;
       
       if (movingMotifRef.current) {
-        // Move up and right (45 degrees)
         movingMotifRef.current.style.transform = `translate(${scrollFactor}px, -${scrollFactor}px)`;
+      }
+
+      // Scroll-driven animation for sticky section
+      if (sectionRef.current) {
+        const container = sectionRef.current.parentElement;
+        if (container) {
+          const containerRect = container.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          // Calculate progress through the sticky container
+          // When container top reaches viewport top, start animation
+          // When container bottom reaches viewport top, end animation
+          if (containerRect.top <= 0 && containerRect.bottom > windowHeight) {
+            // We're in the sticky zone - calculate animation progress
+            const scrollProgress = Math.abs(containerRect.top);
+            const totalScrollDistance = containerRect.height - windowHeight;
+            const progress = Math.min(1, scrollProgress / totalScrollDistance);
+            
+            const newVisibleElements: number[] = [];
+            
+            // Sequential appearance based on scroll progress through the container
+            if (progress > 0.15) newVisibleElements.push(0); // Heading at 15%
+            if (progress > 0.35) newVisibleElements.push(1); // First paragraph at 35%
+            if (progress > 0.55) newVisibleElements.push(2); // Second paragraph at 55%
+            if (progress > 0.75) newVisibleElements.push(3); // Third paragraph at 75%
+            
+            setVisibleElements(newVisibleElements);
+          } else {
+            // Reset when not in sticky zone
+            setVisibleElements([]);
+          }
+        }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <section id="home" className="section-container relative overflow-hidden" style={{ backgroundColor: '#180057' }}>
+    <div className="relative" style={{ height: '300vh' }}> {/* Extra height for scroll-driven animation */}
+      <section 
+        ref={sectionRef} 
+        id="home" 
+        className="sticky top-0 section-container relative overflow-hidden" 
+        style={{ backgroundColor: '#180057' }}
+      >
       {/* Background SVG motifs */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Static motif */}
@@ -67,22 +111,62 @@ const HeroSection: React.FC = () => {
 
       <div className="section-content relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div ref={textContainerRef} className="space-y-8">
             <div className="space-y-4">
-              <h1 className="font-heading text-5xl lg:text-6xl font-bold leading-tight" style={{ color: '#f4fffa' }}>
+              <h1 
+                data-animate
+                data-index="0"
+                className={`font-heading text-5xl lg:text-6xl font-bold leading-tight transition-all duration-700 ease-out ${
+                  visibleElements.includes(0) 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-12'
+                }`}
+                style={{ color: '#f4fffa' }}
+              >
                 Tools you trust. Insights you depend on.
               </h1>
-              <p className="text-xl leading-relaxed" style={{ color: '#f4fffa' }}>
-                At Upskiller, we develop open, accessible, indispensable software that simplifies complexity, turns design information into meaningful insights and empowers AEC professionals to work efficiently.
+              <p 
+                data-animate
+                data-index="1"
+                className={`text-xl leading-relaxed transition-all duration-700 ease-out ${
+                  visibleElements.includes(1) 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-12'
+                }`}
+                style={{ color: '#f4fffa' }}
+              >
+                Intelligent software that transforms complex design data into actionable insights.
               </p>
-              <p className="text-xl leading-relaxed" style={{ color: '#f4fffa' }}>
-                We see a future where the community of AEC professionals seamlessly access information and knowledge, truly understands them, and use them to build a better world.
+              <p 
+                data-animate
+                data-index="2"
+                className={`text-xl leading-relaxed transition-all duration-700 ease-out ${
+                  visibleElements.includes(2) 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-12'
+                }`}
+                style={{ color: '#f4fffa' }}
+              >
+                Open, accessible tools that empower AEC professionals to work smarter, not harder.
+              </p>
+              <p 
+                data-animate
+                data-index="3"
+                className={`text-xl leading-relaxed transition-all duration-700 ease-out ${
+                  visibleElements.includes(3) 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-12'
+                }`}
+                style={{ color: '#f4fffa' }}
+              >
+                Starting with performance analysis (daylight and CO2 powered by machine learning), we're making essential insights effortless.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
