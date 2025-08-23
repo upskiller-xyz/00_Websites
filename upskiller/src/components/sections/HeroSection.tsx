@@ -73,10 +73,10 @@ const HeroSection: React.FC = () => {
           ref={staticMotifRef}
           className="absolute"
           style={{
-            top: '0', // Align with very top of webpage
+            top: '0',
             left: '0',
-            width: '100%',
-            height: 'calc(100% + 80px)',
+            width: '100vw',
+            height: '150vh',
             opacity: 0.33,
             filter: 'brightness(0) saturate(100%) invert(30%) sepia(27%) saturate(1752%) hue-rotate(237deg) brightness(93%) contrast(86%)'
           }}
@@ -84,7 +84,10 @@ const HeroSection: React.FC = () => {
           <img 
             src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/motif-1.svg" 
             alt="" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
+            style={{
+              objectPosition: 'center top'
+            }}
           />
         </div>
         
@@ -93,10 +96,10 @@ const HeroSection: React.FC = () => {
           ref={movingMotifRef}
           className="absolute"
           style={{
-            top: '0', // Align with very top of webpage
+            top: '0',
             left: '0',
-            width: '100%',
-            height: 'calc(100% + 80px)',
+            width: '100vw',
+            height: '150vh',
             opacity: 0.33,
             filter: 'brightness(0) saturate(100%) invert(30%) sepia(27%) saturate(1752%) hue-rotate(237deg) brightness(93%) contrast(86%)'
           }}
@@ -104,7 +107,10 @@ const HeroSection: React.FC = () => {
           <img 
             src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/motif-1.svg" 
             alt="" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
+            style={{
+              objectPosition: 'center top'
+            }}
           />
         </div>
       </div>
