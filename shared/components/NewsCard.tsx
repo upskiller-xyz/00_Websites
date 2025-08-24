@@ -5,6 +5,7 @@ interface NewsItem {
   title: string;
   description: string;
   date: string;
+  url: string;
 }
 
 interface NewsCardProps {
@@ -100,9 +101,21 @@ const NewsCard: React.FC<NewsCardProps> = ({
           {newsItems.map((item) => (
             <div key={item.id} className="last:border-b-0">
               <div>
-                <h4 className="text-dark font-bold leading-snug text-lg" style={{ marginBottom: '2px' }}>
+                <a 
+                  href={item.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-dark font-bold leading-snug text-base hover:underline transition-all duration-200"
+                  style={{ 
+                    marginBottom: '2px', 
+                    display: 'block',
+                    fontFamily: 'var(--font-automate)',
+                    fontWeight: 700,
+                    textDecoration: 'none'
+                  }}
+                >
                   {item.title}
-                </h4>
+                </a>
                 <p className="text-dark leading-relaxed text-sm" style={{ marginBottom: '2px' }}>
                   {item.description}
                 </p>
