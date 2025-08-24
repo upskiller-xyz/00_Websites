@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "New AI-Powered Learning Tools Launch",
+    "description": "Enhanced personalized learning experience with advanced AI algorithms",
+    "date": "2024-08-20"
+  },
+  {
+    "id": 2,
+    "title": "Partnership with Leading Tech Companies",
+    "description": "Strategic collaboration to expand skill development opportunities",
+    "date": "2024-08-15"
+  },
+  {
+    "id": 3,
+    "title": "Mobile App Beta Testing Begins",
+    "description": "Take your learning on the go with our new mobile application",
+    "date": "2024-08-10"
+  },
+  {
+    "id": 4,
+    "title": "Community Milestone: 50K Active Learners",
+    "description": "Celebrating our growing community of passionate skill builders",
+    "date": "2024-08-05"
+  }
+]
