@@ -6,7 +6,7 @@ const TeamSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('team');
 
   const teamParagraphs = [
-    "The journey started in autumn 2023, when four tech-enthusiastic architects and engineers found themselves sharing a common frustration: the construction industry's low level of digitalization. A few years into our careers, we were ready for change.",
+    "In the autumn of 2023, four tech-enthusiastic architects and engineers found themselves sharing a common frustration: the construction industry's low level of digitalization. A few years into our careers, we were ready for change.",
     <>
       We crossed paths at IAAC's Master in Advanced Computation for Architecture & Design (
       <a
