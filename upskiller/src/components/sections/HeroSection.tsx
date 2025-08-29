@@ -141,19 +141,7 @@ const HeroSection: React.FC = () => {
                 }`}
                 style={{ color: '#f4fffa' }}
               >
-                Intelligent software that transforms complex design data into actionable insights.
-              </p>
-              <p 
-                data-animate
-                data-index="2"
-                className={`text-xl leading-relaxed transition-all duration-700 ease-out ${
-                  visibleElements.includes(2) 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 -translate-x-12'
-                }`}
-                style={{ color: '#f4fffa' }}
-              >
-                Open, accessible tools that empower AEC professionals to work smarter, not harder.
+                Artificially intelligent, open and accessible software that transforms complex design data into actionable insights.
               </p>
               <p 
                 data-animate
@@ -165,7 +153,7 @@ const HeroSection: React.FC = () => {
                 }`}
                 style={{ color: '#f4fffa' }}
               >
-                Starting with performance analysis (daylight and CO2 powered by machine learning), we're making essential insights effortless.
+                Starting with performance analysis (daylight and CO2 powered by machine learning), we help the AEC industry to work smarter, not harder.
               </p>
             </div>
           </div>
