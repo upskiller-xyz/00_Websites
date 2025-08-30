@@ -2,28 +2,12 @@
 import React from 'react';
 import { InfoCard } from '../../../../shared/components/InfoCard';
 import { ContactButton } from '../../../../shared/components/ContactButton';
+import { NewsCard } from '../../../../shared/components/NewsCard';
 
 const ResourcesSection: React.FC = () => {
-  const resources = [
+  const articles = [
     {
-      title: "News",
-      description: "Stay updated with the latest developments in sustainable building design and our product announcements.",
-      items: [
-        "Product releases and updates",
-        "Industry insights and trends", 
-        "Company milestones",
-        "Partnership announcements"
-      ],
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-        </svg>
-      ),
-      color: "blue",
-      hasButton: false
-    },
-    {
-      title: "Blog",
+      title: "Articles",
       description: "Deep dives into technical topics, best practices, and thought leadership in environmental optimization.",
       items: [
         "Technical tutorials and guides",
@@ -89,33 +73,22 @@ const ResourcesSection: React.FC = () => {
           <h2 className="font-heading text-4xl lg:text-5xl font-bold" style={{ color: '#f4fffa' }}>
             Resources
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#f4fffa' }}>
-            Our knowledge base is not fully here yet, but we are working on making it open and accessible to everyone! Have to prioritize <a href="https://github.com/upskiller-xyz/Lux"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary-600 underline"
-        >Lux</a> and <a
-        href="https://github.com/upskiller-xyz/Col"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary-600 underline"
-        >Col</a> first:)
-          </p>
         </div>
 
         {/* Resources Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {resources.map((resource, index) => (
+          <NewsCard className="transition-all duration-300" />
+          {articles.map((article, index) => (
             <InfoCard
               key={index}
-              title={resource.title}
-              description={resource.description}
-              items={resource.items}
+              title={article.title}
+              description={article.description}
+              items={article.items}
               itemsLabel="What you'll find:"
-              buttonText={resource.hasButton ? `Explore ${resource.title}` : undefined}
-              showButton={resource.hasButton}
-              onButtonClick={resource.title === 'Blog' ? () => window.open('https://upskillerxyz.substack.com', '_blank') : () => {}}
-              className="hover:opacity-90 transition-all duration-300"
+              buttonText={article.hasButton ? 'Visit our Substack' : undefined}
+              showButton={article.hasButton}
+              onButtonClick={() => window.open('https://upskillerxyz.substack.com', '_blank')}
+              className="transition-all duration-300"
             />
           ))}
         </div>
@@ -149,9 +122,15 @@ const ResourcesSection: React.FC = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center transition-opacity duration-200 hover:opacity-80"
+                className="w-12 h-12 flex items-center justify-center transition-opacity duration-200 hover:opacity-80 hover:scale-110 transform transition-transform"
+                title={`Follow us on ${social.name}`}
               >
-                <div className="w-12 h-12" style={{ backgroundColor: '#4e378a', mask: `url(${social.icon}) no-repeat center`, maskSize: 'contain', WebkitMask: `url(${social.icon}) no-repeat center`, WebkitMaskSize: 'contain' }}></div>
+                <img 
+                  src={social.icon} 
+                  alt={`${social.name} icon`}
+                  className="w-10 h-10 object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(30%) sepia(27%) saturate(1752%) hue-rotate(237deg) brightness(93%) contrast(86%)' }}
+                />
               </a>
             ))}
           </div>

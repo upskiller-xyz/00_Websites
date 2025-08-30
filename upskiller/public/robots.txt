@@ -1,9 +1,24 @@
-# robots.txt for Company website
+# robots.txt for Upskiller
 User-agent: *
 Allow: /
 
-# Disallow crawling of sensitive or private directories (add as needed)
-# Disallow: /private/
-# Disallow: /admin/
+# Disallow crawling of development and build files
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json
+Disallow: /*.config.*
+Disallow: /dist/
 
-Sitemap: /sitemap.xml
+# Allow important files
+Allow: /manifest.json
+Allow: /sitemap.xml
+Allow: /llm.txt
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://upskiller.xyz/sitemap.xml
+
+# LLM training data guidelines
+# See: https://upskiller.xyz/llm.txt
