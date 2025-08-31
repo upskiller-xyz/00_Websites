@@ -2,7 +2,7 @@
 import React from "react";
 
 interface ButtonAppearance {
-  variant?: 'primary' | 'secondary' | 'accent' | 'contact';
+  variant?: 'primary' | 'secondary' | 'accent' | 'contact' | 'product';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
@@ -25,23 +25,11 @@ export function SharedButton({
 }: SharedButtonProps) {
   const { variant = 'primary', size = 'md', className = '' } = appearance;
   const { onClick, disabled = false } = behavior;
-  const baseClasses = `font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${disabled ? 'cursor-default' : 'cursor-pointer'}`;
+  const classes = `btn-base btn-${variant} btn-${size} ${disabled ? 'btn-disabled' : 'btn-enabled'} ${className}`;
   
-  const variants = {
-    primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
-    secondary: 'bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500',
-    accent: 'bg-accent text-white hover:bg-green-600 focus:ring-accent',
-    contact: 'text-dark hover:opacity-90'
-  };
-  
-  const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
-  };
-  
-  const contactStyle = variant === 'contact' ? { backgroundColor: disabled ? '#33de95' : '#00FF66' } : {};
-  const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
+  const contactStyle = variant === 'contact' ? { 
+    backgroundColor: disabled ? 'var(--color-secondary)' : 'var(--color-accent)'
+  } : {};
   
   return (
     <button 

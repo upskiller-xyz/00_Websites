@@ -14,7 +14,7 @@ interface TeamMemberDetailsProps {
   memberDetails: MemberDetails;
 }
 
-const TeamMemberDetails: React.FC<TeamMemberDetailsProps> = ({
+export const TeamMemberDetails: React.FC<TeamMemberDetailsProps> = ({
   memberDetails
 }) => {
   const detailEntries = [
@@ -39,5 +39,3 @@ const TeamMemberDetails: React.FC<TeamMemberDetailsProps> = ({
     </div>
   );
 };
-
-export default TeamMemberDetails;

@@ -8,7 +8,7 @@ export interface TeamMember {
   workExperience?: string;
   favLLM?: string;
   fact?: string;
-  socials: string;
+  socials: Record<string, string> | string;
 }
 
 export interface TeamTab {

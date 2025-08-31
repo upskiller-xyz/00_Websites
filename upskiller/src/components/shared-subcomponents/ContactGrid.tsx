@@ -1,8 +1,8 @@
 import React from 'react';
 import ComponentGrid from '../shared-components/ComponentGrid';
 import { GridType } from '../../constants/grid-types.enums';
-import { ContactButton } from '../../../shared/components/ContactButton';
-import { ContactMethod } from '../../../shared/types/contact.types';
+import { ContactButton } from '@shared/components';
+import { ContactMethod } from '@shared/types';
 import { EmailIcon, GitHubIcon } from '../svg';
 
 interface ContactGridProps {

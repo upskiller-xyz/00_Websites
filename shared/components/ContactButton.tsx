@@ -33,7 +33,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({
         href={link}
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
-        className={`flex items-center space-x-4 p-4 cursor-pointer ${className}`}
+        className={`flex items-center space-x-4 px-6 py-4 cursor-pointer ${className}`}
         style={{ 
           backgroundColor: '#00ff66',
           transition: 'transform 0.3s ease'

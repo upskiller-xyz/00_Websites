@@ -14,7 +14,7 @@ const ContentTitle: React.FC<ContentTitleProps> = ({
   theme = 'dark'
 }) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-  const baseClasses = 'font-heading font-bold';
+  const baseClasses = 'font-bold';
   
   const themeClasses = {
     light: 'text-light',
@@ -33,7 +33,7 @@ const ContentTitle: React.FC<ContentTitleProps> = ({
 
   const finalClasses = `${baseClasses} ${themeClasses[theme]} ${sizeClasses[level]} ${className}`;
 
-  return <Tag className={finalClasses}>{title}</Tag>;
+  return <Tag className={finalClasses} style={{ fontFamily: 'var(--font-automate)' }}>{title}</Tag>;
 };
 
 export default ContentTitle;

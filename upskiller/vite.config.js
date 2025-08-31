@@ -19,4 +19,5 @@ export default defineConfig({
             '@shared': path.resolve(__dirname, '../shared'),
         },
     },
+    assetsInclude: ['**/*.woff', '**/*.woff2'],
 });

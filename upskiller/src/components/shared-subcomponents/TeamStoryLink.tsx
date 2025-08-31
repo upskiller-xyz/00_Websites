@@ -1,5 +1,5 @@
 import React from 'react';
-import SharedLink from '../../../../../shared/components/SharedLink';
+import { SharedLink } from '@shared/components';
 
 interface TeamStoryLinkProps {
   href: string;

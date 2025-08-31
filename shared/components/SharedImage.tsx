@@ -4,16 +4,27 @@ interface SharedImageProps {
   src: string;
   alt: string;
   className?: string;
-  children?: React.ReactNode;
+  onClick?: () => void;
 }
 
-const SharedImage: React.FC<SharedImageProps> = ({ src, alt, className = '', children }) => {
+export const SharedImage: React.FC<SharedImageProps> = ({
+  src,
+  alt,
+  className = '',
+  onClick
+}) => {
+  const Component = onClick ? 'button' : 'div';
+  
   return (
-    <div className="shared-image-container">
-      <img src={src} alt={alt} className={className} />
-      {children}
-    </div>
+    <Component
+      onClick={onClick}
+      className={onClick ? 'transition-opacity duration-200 hover:opacity-80 cursor-pointer' : ''}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+      />
+    </Component>
   );
 };
-
-export default SharedImage;

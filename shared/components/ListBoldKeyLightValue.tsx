@@ -12,7 +12,7 @@ interface ListBoldKeyLightValueProps {
   details: MemberDetails;
 }
 
-const ListBoldKeyLightValue = ({
+export const ListBoldKeyLightValue = ({
   details
 }: ListBoldKeyLightValueProps): JSX.Element => {
   const { graduatedAs, teachingExperience, workExperience, favLLM, fact } = details;
@@ -52,5 +52,3 @@ const ListBoldKeyLightValue = ({
   </div>
   );
 };
-
-export default ListBoldKeyLightValue;

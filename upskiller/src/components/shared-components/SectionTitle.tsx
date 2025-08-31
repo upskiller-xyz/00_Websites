@@ -11,7 +11,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   theme = 'dark', 
   className = '' 
 }) => (
-  <h2 className={`font-heading section-title section-title-${theme} ${className}`}>
+  <h2 className={`section-title section-title-${theme} ${className}`} style={{ fontFamily: 'var(--font-automate)' }}>
     {children}
   </h2>
 );

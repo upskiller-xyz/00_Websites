@@ -2,7 +2,7 @@ import React from 'react';
 
 interface SectionProps {
   id: string;
-  theme: 'primary' | 'secondary';
+  theme: 'primary' | 'secondary' | 'support';
   children: React.ReactNode;
 }
 

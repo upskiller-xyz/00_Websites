@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'AUTOMATE';
-  src: url('./AUTOMATEBold.woff') format('woff');
+  src: url('/fonts/AUTOMATEBold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'AUTOMATE';
-  src: url('./AUTOMATELight.woff') format('woff');
+  src: url('/fonts/AUTOMATELight.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;

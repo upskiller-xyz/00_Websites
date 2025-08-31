@@ -1,6 +1,6 @@
 import React from 'react';
 import TeamTextArea from './TeamTextArea';
-import TeamMemberDetails from '../../../../../shared/components/TeamMemberDetails';
+import { TeamMemberDetails } from '@shared/components';
 
 interface TeamMemberInfo {
   bio: string;

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import ProductGrid from '../sections-components/ProductGrid';
-import { Product } from '../../../../shared/types/product.types';
+import { Product } from '@shared/types';
 
 const ProductsSection: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);

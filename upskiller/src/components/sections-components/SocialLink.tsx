@@ -1,6 +1,5 @@
 import React from 'react';
-import SharedLink from '../../../../shared/components/SharedLink';
-import SharedImage from '../../../../shared/components/SharedImage';
+import { SharedLink, SharedImage } from '@shared/components';
 
 interface SocialLinkProps {
   name: string;

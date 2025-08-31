@@ -9,7 +9,7 @@ interface SharedLinkProps {
   children: React.ReactNode;
 }
 
-const SharedLink: React.FC<SharedLinkProps> = ({ 
+export const SharedLink: React.FC<SharedLinkProps> = ({ 
   href, 
   title, 
   className = '', 
@@ -32,5 +32,3 @@ const SharedLink: React.FC<SharedLinkProps> = ({
     </a>
   );
 };
-
-export default SharedLink;

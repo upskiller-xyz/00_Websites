@@ -1,5 +1,5 @@
 import React from 'react';
-import { SharedButton, SharedButtonProps } from '../../../../../shared/components/SharedButton';
+import { SharedButton, SharedButtonProps } from '@shared/components/SharedButton';
 
 interface TeamTabButtonProps {
   label: string;

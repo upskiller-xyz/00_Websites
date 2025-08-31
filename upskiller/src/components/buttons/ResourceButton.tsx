@@ -1,6 +1,6 @@
 import React from 'react';
-import { SharedButton, SharedButtonProps } from '../../../../shared/components/SharedButton';
-import { ButtonBase } from '../../../../shared/types/button.types';
+import { SharedButton, SharedButtonProps } from '@shared/components/SharedButton';
+import { ButtonBase } from '@shared/types';
 
 interface ResourceButtonProps {
   button: ButtonBase;

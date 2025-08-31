@@ -4,7 +4,7 @@ import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import TeamContentArea from '../sections-components/team/TeamContentArea';
 import TeamTabs from '../sections-components/team/TeamTabs';
-import { TeamMember, TeamTab } from '../../../../shared/types/team.types';
+import { TeamMember, TeamTab } from '@shared/types';
 
 const TeamSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('team');

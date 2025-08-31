@@ -56,10 +56,10 @@ const NewsCard: React.FC<NewsCardProps> = ({
   if (loading) {
     return (
       <div 
-        className={`transition-all duration-300 flex flex-col h-full ${className}`}
+        className={`news-card transition-all duration-300 ${className}`}
         style={style}
       >
-        <div className="p-8 flex-grow flex items-center justify-center">
+        <div className="news-card-content flex items-center justify-center">
           <div className="text-dark">Loading news...</div>
         </div>
       </div>
@@ -69,10 +69,10 @@ const NewsCard: React.FC<NewsCardProps> = ({
   if (error) {
     return (
       <div 
-        className={`transition-all duration-300 flex flex-col h-full ${className}`}
+        className={`news-card transition-all duration-300 ${className}`}
         style={style}
       >
-        <div className="p-8 flex-grow flex items-center justify-center">
+        <div className="news-card-content flex items-center justify-center">
           <div className="text-dark">Error loading news: {error}</div>
         </div>
       </div>
@@ -81,14 +81,14 @@ const NewsCard: React.FC<NewsCardProps> = ({
 
   return (
     <div 
-      className={`transition-all duration-300 flex flex-col h-full ${className}`}
+      className={`news-card transition-all duration-300 ${className}`}
       style={style}
     >
       {/* Content Area with padding */}
-      <div className="p-8 flex-grow">
+      <div className="news-card-content">
         {/* Header */}
         <div className="space-y-4 mb-8">
-          <h3 className="font-heading font-bold text-dark text-3xl">
+          <h3 className="news-card-title font-bold text-dark text-3xl">
             {title}
           </h3>
           <p className="text-dark leading-relaxed">

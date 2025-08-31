@@ -1,5 +1,5 @@
 import React from 'react';
-import SharedImage from '../../../../../shared/components/SharedImage';
+import { SharedImage } from '@shared/components';
 import { ImageSource, IMAGE_SOURCES_MAP } from '../../../constants/image-sources.enums';
 
 const TeamImage: React.FC = () => {

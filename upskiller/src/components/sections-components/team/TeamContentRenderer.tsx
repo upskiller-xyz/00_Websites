@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamStoryContent from './TeamStoryContent';
 import TeamMemberContent from './TeamMemberContent';
-import { TeamMember } from '../../../../../shared/types/team.types';
+import { TeamMember } from '@shared/types';
 
 interface TeamContentRendererProps {
   member: TeamMember;

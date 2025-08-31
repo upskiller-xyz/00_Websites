@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import PartnersGrid from '../sections-components/partners/PartnersGrid';
-import { Partner } from '../../../../shared/types/partner.types';
+import { Partner } from '@shared/types';
 
 const SupportSection: React.FC = () => {
   const [partners, setPartners] = useState<Partner[]>([]);
@@ -20,9 +20,8 @@ const SupportSection: React.FC = () => {
 
     fetchPartners();
   }, []);
-
   return (
-    <Section id="support" theme="primary">
+    <Section id="support" theme="support">
       <SectionHeader 
         content={{
           title: "Collaborating with",
