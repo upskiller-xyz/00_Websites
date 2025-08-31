@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ListBoldKeyLightValueProps {
+interface MemberDetails {
   graduatedAs?: string;
   teachingExperience?: string;
   workExperience?: string;
@@ -8,13 +8,16 @@ interface ListBoldKeyLightValueProps {
   fact?: string;
 }
 
+interface ListBoldKeyLightValueProps {
+  details: MemberDetails;
+}
+
 const ListBoldKeyLightValue = ({
-  graduatedAs,
-  teachingExperience,
-  workExperience,
-  favLLM,
-  fact,
-}: ListBoldKeyLightValueProps): JSX.Element => (
+  details
+}: ListBoldKeyLightValueProps): JSX.Element => {
+  const { graduatedAs, teachingExperience, workExperience, favLLM, fact } = details;
+  
+  return (
   <div className="mb-8">
     {graduatedAs && (
       <div>
@@ -47,6 +50,7 @@ const ListBoldKeyLightValue = ({
       </div>
     )}
   </div>
-);
+  );
+};
 
 export default ListBoldKeyLightValue;

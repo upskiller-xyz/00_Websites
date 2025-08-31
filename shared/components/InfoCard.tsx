@@ -1,45 +1,58 @@
 import React from 'react';
 import { SharedButton } from './SharedButton';
+import { ProductContent } from '../types/product.types';
+import { ButtonBase } from '../types/button.types';
 
-interface InfoCardProps {
+interface InfoCardContent extends ProductContent {
   title: string;
-  subtitle?: string;
-  problem?: string;
-  description: string;
-  items: string[];
-  itemsLabel?: string;
   descriptionLabel?: string;
   icon?: React.ReactNode;
-  buttonText?: string;
-  buttonDisabled?: boolean;
-  buttonStyle?: React.CSSProperties;
-  onClick?: () => void;
-  onButtonClick?: () => void;
+  items: string[];
+  itemsLabel?: string;
+}
+
+interface InfoCardConfig {
   className?: string;
   style?: React.CSSProperties;
-  showButton?: boolean;
+  onClick?: () => void;
+}
+
+interface InfoCardProps {
+  content: InfoCardContent;
+  button?: ButtonBase;
+  config?: InfoCardConfig;
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({
-  title,
-  subtitle,
-  problem,
-  description,
-  items,
-  itemsLabel = "Key Features:",
-  descriptionLabel,
-  icon,
-  buttonText,
-  buttonDisabled = false,
-  buttonStyle,
-  onClick,
-  onButtonClick,
-  className = '',
-  style = { backgroundColor: '#00d67a' },
-  showButton = true
+  content,
+  button,
+  config = {}
 }) => {
+  const {
+    title,
+    subtitle,
+    problem,
+    description,
+    descriptionLabel,
+    icon,
+    items,
+    itemsLabel = "Key Features:"
+  } = content;
+
+  const {
+    text: buttonText,
+    disabled: buttonDisabled = false,
+    show: showButton = true,
+    onClick: onButtonClick
+  } = button || {};
+
+  const {
+    className = '',
+    style = { backgroundColor: '#00d67a' },
+    onClick
+  } = config;
   const defaultButtonStyle = { backgroundColor: buttonDisabled ? '#33de95' : '#00ff66' };
-  const finalButtonStyle = { ...defaultButtonStyle, ...buttonStyle };
+  const finalButtonStyle = { ...defaultButtonStyle };
 
   return (
     <div 
@@ -119,10 +132,8 @@ const InfoCard: React.FC<InfoCardProps> = ({
             }}
           >
             <SharedButton
-              variant="contact"
-              className="w-full"
-              onClick={onButtonClick}
-              disabled={buttonDisabled}
+              appearance={{ variant: "contact", className: "w-full" }}
+              behavior={{ onClick: onButtonClick, disabled: buttonDisabled }}
             >
               {buttonText}
             </SharedButton>

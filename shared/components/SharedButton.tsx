@@ -1,23 +1,30 @@
 // shared/components/SharedButton.tsx
 import React from "react";
 
-interface SharedButtonProps {
-  children: React.ReactNode;
+interface ButtonAppearance {
   variant?: 'primary' | 'secondary' | 'accent' | 'contact';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+}
+
+interface ButtonBehavior {
   onClick?: () => void;
   disabled?: boolean;
 }
 
+export interface SharedButtonProps {
+  children: React.ReactNode;
+  appearance?: ButtonAppearance;
+  behavior?: ButtonBehavior;
+}
+
 export function SharedButton({ 
   children, 
-  variant = 'primary', 
-  size = 'md', 
-  className = '',
-  onClick,
-  disabled = false
+  appearance = {},
+  behavior = {}
 }: SharedButtonProps) {
+  const { variant = 'primary', size = 'md', className = '' } = appearance;
+  const { onClick, disabled = false } = behavior;
   const baseClasses = `font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${disabled ? 'cursor-default' : 'cursor-pointer'}`;
   
   const variants = {

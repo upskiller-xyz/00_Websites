@@ -1,20 +1,18 @@
 import React from 'react';
+import { ContactMethod } from '../types/contact.types';
 
 interface ContactButtonProps {
-  type: string;
-  value: string;
-  link: string;
+  contact: ContactMethod;
   icon: React.ReactNode;
   className?: string;
 }
 
 const ContactButton: React.FC<ContactButtonProps> = ({
-  type,
-  value,
-  link,
+  contact,
   icon,
   className = ''
 }) => {
+  const { type, value, link } = contact;
   const isExternal = type === 'GitHub';
   
   return (
