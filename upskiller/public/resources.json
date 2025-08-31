@@ -1,0 +1,25 @@
+{
+  "resources": [
+    {
+      "content": {
+        "name": "Articles",
+        "subtitle": "Deep dives into technical topics",
+        "problem": "Finding quality technical content is challenging",
+        "description": "Deep dives into technical topics, best practices, and thought leadership in environmental optimization.",
+        "features": [
+          "Technical tutorials and guides",
+          "Case studies and examples", 
+          "Research findings",
+          "Expert opinions and analysis"
+        ]
+      },
+      "config": {
+        "id": "articles",
+        "status": "available",
+        "color": "purple",
+        "buttonText": "Visit our Substack",
+        "linkUrl": "https://upskillerxyz.substack.com"
+      }
+    }
+  ]
+}

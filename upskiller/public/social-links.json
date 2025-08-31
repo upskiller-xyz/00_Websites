@@ -1,0 +1,19 @@
+{
+  "socialLinks": [
+    {
+      "name": "Substack",
+      "url": "http://upskiller.substack.com/",
+      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/substack.png"
+    },
+    {
+      "name": "LinkedIn", 
+      "url": "https://www.linkedin.com/company/upskiller-xyz/",
+      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/linkedin-dark.svg"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/upskiller.xyz", 
+      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/instagram-dark.svg"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import HeroTitle from './HeroTitle';
+import HeroParagraph from './HeroParagraph';
+const HeroContent = ({ textContainerRef, visibleElements }) => (_jsx("div", { className: "section-content relative z-10", children: _jsx("div", { className: "hero-content-grid", children: _jsx("div", { ref: textContainerRef, className: "hero-text-container", children: _jsxs("div", { className: "hero-text-group", children: [_jsx(HeroTitle, { isVisible: visibleElements.includes(0), children: "Tools you trust. Insights you depend on." }), _jsx(HeroParagraph, { isVisible: visibleElements.includes(1), dataIndex: 1, children: "Artificially intelligent, open and accessible software that transforms complex design data into actionable insights." }), _jsx(HeroParagraph, { isVisible: visibleElements.includes(3), dataIndex: 3, children: "Starting with performance analysis (daylight and CO2 powered by machine learning), we help the AEC industry to work smarter, not harder." })] }) }) }) }));
+export default HeroContent;

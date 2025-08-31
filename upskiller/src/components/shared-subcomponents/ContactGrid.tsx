@@ -1,0 +1,34 @@
+import React from 'react';
+import ComponentGrid from '../shared-components/ComponentGrid';
+import { GridType } from '../../constants/grid-types.enums';
+import { ContactButton } from '../../../shared/components/ContactButton';
+import { ContactMethod } from '../../../shared/types/contact.types';
+import { EmailIcon, GitHubIcon } from '../svg';
+
+interface ContactGridProps {
+  contactMethods: ContactMethod[];
+}
+
+const ContactGrid: React.FC<ContactGridProps> = ({ contactMethods }) => {
+  const getContactIcon = (type: string) => {
+    const iconMap = {
+      Email: <EmailIcon />,
+      GitHub: <GitHubIcon />
+    };
+    return iconMap[type as keyof typeof iconMap] || null;
+  };
+
+  return (
+    <ComponentGrid gridType={GridType.CUSTOM} className="contact-methods-grid">
+      {contactMethods.map((method, index) => (
+        <ContactButton
+          key={index}
+          contact={method}
+          icon={getContactIcon(method.type)}
+        />
+      ))}
+    </ComponentGrid>
+  );
+};
+
+export default ContactGrid;

@@ -1,0 +1,62 @@
+{
+  "story": [
+    {
+      "type": "text",
+      "content": "In the autumn of 2023, four tech-enthusiastic architects and engineers found themselves sharing a common frustration: the construction industry's low level of digitalization. A few years into our careers, we were ready for change."
+    },
+    {
+      "type": "mixed",
+      "content": "We crossed paths at IAAC's Master in Advanced Computation for Architecture & Design (",
+      "links": [
+        {
+          "text": "MaCAD",
+          "href": "https://iaac.net/masters/master-in-advanced-computation-for-architecture-design/"
+        }
+      ],
+      "continuation": "), where Stasja taught a course in ML algorithms that we studied. Together, we developed several promising machine learning prototypes, including a daylight predictive model that was published in a ",
+      "moreLinks": [
+        {
+          "text": "high-impact journal",
+          "href": "https://www.sciencedirect.com/science/article/abs/pii/S0360132325002252"
+        }
+      ],
+      "end": "."
+    },
+    {
+      "type": "mixed",
+      "content": "This success sparked an idea: why not adapt this model for Swedish regulations? We applied for funding and received two grants from the ",
+      "links": [
+        {
+          "text": "Bertil and Britt Svensson Foundation",
+          "href": "https://belysningsstiftelsen.se/projekt/alejandro-pacheco-dieguez-ml-modell-for-dagsljusanalys"
+        }
+      ],
+      "continuation": ". The project has been generating ",
+      "moreLinks": [
+        {
+          "text": "buzz",
+          "href": "https://www.svenskbyggtidning.se/2025/03/21/nytt-ai-projekt-satter-dagsljuset-i-fokus/"
+        }
+      ],
+      "continuation2": " in the industry, and after a couple of months working together, we've discovered something even more valuable: we make a great team. ",
+      "finalLinks": [
+        {
+          "text": "Almi",
+          "href": "https://www.almi.se/"
+        }
+      ],
+      "end": ", Sweden's business development agency, thinks so too."
+    },
+    {
+      "type": "mixed",
+      "content": "No bs and no buzzwords, effectiveness and transparency are values that we found in common, no matter the project we are working on. We want to understand the problem and provide a solution that works, not just a fancy tool that looks good on paper. Does it resonate?",
+      "links": [
+        {
+          "text": " Reach out",
+          "href": "mailto:info@upskiller.xyz"
+        }
+      ],
+      "end": " to us, we love virtual coffee chats.\""
+    }
+  ]
+}
