@@ -17,6 +17,8 @@ build
 .nuxt
 out
 
+*.js
+
 # Development files
 *.md
 docs/
