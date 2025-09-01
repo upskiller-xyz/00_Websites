@@ -118,11 +118,11 @@ const TeamSection: React.FC = () => {
       ),
       extra: (
         <ListBoldKeyLightValue
-          graduatedAs="Civil Engineer with master in Advanced Computation for Architecture & Design."
+          graduatedAs="Master's degrees in Civil Engineering and Advanced Computation for Architecture & Design."
           teachingExperience="Munich University of Applied Sciences."
-          workExperience="Jaeger Ausbau Gruppe, PORR."
-          favLLM="Claude"
-          fact="Experienced drone pilot."
+          workExperience="Jaeger Ausbau Gruppe, PORR, pde Integrale Planung."
+          favLLM="GPT & Gemini (in robot mode)"
+          fact="Loves building things – from concrete canoes to custom drones."
         />
       ),
       socials: "<a href=\"mailto:christoph.berkmiller@upskiller.xyz\" class=\"text-primary-600 underline\">christoph.berkmiller@upskiller.xyz</a> | <a href=\"https://www.linkedin.com/in/christoph-berkmiller-08822020a/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary-600 underline\">LinkedIn</a>"
