@@ -19,8 +19,9 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
   ]);
 
   return (
-    <div className={`hidden md:flex space-x-8 px-6 py-2 transition-all duration-300 ${
-      isScrolled ? 'bg-white/20 backdrop-blur-sm' : 'bg-transparent'
+    <div className={`navigation-links ${
+      // isScrolled ? 'bg-white/20 backdrop-blur-sm' :
+       'bg-transparent'
     }`}>
       {Array.from(navItems.entries()).map(([sectionId, label]) => (
         <button

@@ -1,9 +1,10 @@
 import React from 'react';
 import ComponentGrid from '../shared-components/ComponentGrid';
 import { GridType } from '../../constants/grid-types.enums';
-import { InfoCard } from '@shared/components';
+import { InfoCard } from './info-card/InfoCard';
 import { Product } from '@shared/types';
 import { ProductStatus } from '../../constants/enums';
+import ProductIcon from './ProductIcon';
 
 interface ProductGridProps {
   products: Product[];
@@ -14,11 +15,14 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => (
     {products.map((product) => {
       const isUpcoming = product.config.status === ProductStatus.UPCOMING;
       const isClickable = product.config.linkUrl && !isUpcoming;
-      // TODO: add icon parsing into ProductIcon component, add it here
+      
       return (
         <InfoCard
           key={product.config.id}
-          content={product.content}
+          content={{
+            ...product.content,
+            icon: <ProductIcon iconData={product.icon} />
+          }}
           button={{
             text: product.config.buttonText,
             disabled: isUpcoming,

@@ -28,9 +28,9 @@ const ResourcesSection: React.FC = () => {
   }, []);
 
   const getResourceIcon = (resourceName: string) => {
-    if (resourceName === 'Articles') {
-      return <ArticlesIcon />;
-    }
+    // if (resourceName === 'Articles') {
+    //   return <ArticlesIcon />;
+    // }
     return null;
   };
 
@@ -52,7 +52,7 @@ const ResourcesSection: React.FC = () => {
           const displayConfig = {
             descriptionLabel: "What you'll find:",
             itemsLabel: "What you'll find:",
-            icon: getResourceIcon(resource.content.name)
+            // icon: getResourceIcon(resource.content.name)
           };
           
           const buttonConfig = {

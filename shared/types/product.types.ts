@@ -9,7 +9,8 @@ export interface ProductContent {
   name: string;
   subtitle?: string;
   problem: string;
-  description: string;
+  solution: string;
+  description?: string;
   features: string[];
 }
 

@@ -3,13 +3,14 @@ import { SharedButton } from '../../../../../shared/components/SharedButton';
 import { ProductContent } from '../../../../../shared/types/product.types';
 import { ButtonBase } from '../../../../../shared/types/button.types';
 import { InfoCardHeading } from './InfoCardHeading';
-import { InfoCardProblem } from './InfoCardProblem';
+import { InfoCardTitleText } from './InfoCardTitleText';
 import { InfoCardDescription } from './InfoCardDescription';
 import { InfoCardItemsPanel } from './InfoCardItemsPanel';
 
 interface InfoCardContent extends Partial<ProductContent> {
   title?: string;
   name?: string;
+  solution?: string;
   descriptionLabel?: string;
   icon?: React.ReactNode;
   items?: string[];
@@ -38,6 +39,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
     name,
     subtitle,
     problem,
+    solution,
     description,
     descriptionLabel,
     icon,
@@ -45,6 +47,9 @@ export const InfoCard: React.FC<InfoCardProps> = ({
     itemsLabel = "Key Features:",
     features
   } = content;
+  
+  // Debug logging
+  console.log('InfoCard content:', { title, name, problem, solution, description });
   
   const displayTitle = title || name || '';
   const displayItems = items || features || [];
@@ -63,36 +68,56 @@ export const InfoCard: React.FC<InfoCardProps> = ({
 
   return (
     <div 
-      className={`info-card transition-all duration-300 ${className}`}
+      className={`info-card ${className}`}
       onClick={onClick}
     >
+      {/* Image (optional) */}
+      {icon && (
+        <div className="info-card-image">
+          {icon}
+        </div>
+      )}
+      
+      {/* Title */}
+      <div className="info-card-header">
+        <InfoCardHeading title={displayTitle} subtitle={subtitle} />
+      </div>
+      
+      {/* Content - 3 InfoCard elements for products */}
       <div className="info-card-content">
-        <div className="space-y-6">
-          {icon && (
-            <div className="w-full">
-              <div className="w-full flex items-center justify-center">
-                {icon}
-              </div>
-            </div>
-          )}
-          
-          <div className="space-y-3">
-            <InfoCardHeading title={displayTitle} subtitle={subtitle} />
-            
-            {problem && <InfoCardProblem problem={problem} />}
-            
+        {/* Problem element */}
+        {problem && (
+          <div className="info-card-element">
+            <InfoCardTitleText title="Problem" text={problem} />
+          </div>
+        )}
+        
+        {/* Solution element */}
+        {solution && (
+          <div className="info-card-element">
+            <InfoCardTitleText title="Solution" text={solution} />
+          </div>
+        )}
+        
+        {/* Description element (if no problem/solution structure) */}
+        {!problem && !solution && description && (
+          <div className="info-card-element">
             <InfoCardDescription 
-              description={description??''}
+              description={description}
               label={descriptionLabel}
             />
           </div>
-          
-          {displayItems && displayItems.length > 0 && (
+        )}
+        
+        {/* Key Features element */}
+        {displayItems && displayItems.length > 0 && (
+          <div className="info-card-element">
             <InfoCardItemsPanel items={displayItems} label={itemsLabel} />
-          )}
-        </div>
+          </div>
+        )}
       </div>
       
+      {/* Button (optional) */}
       {showButton && buttonText && (
         <div className="info-card-button-area">
           <div className={`info-card-button-wrapper ${buttonDisabled ? 'disabled' : ''}`}>

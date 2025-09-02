@@ -10,7 +10,7 @@
         "name": "DAYLIGHT FACTOR",
         "subtitle": "Fast daylight analysis tool",
         "problem": "Daylight simulation is slow and incurs costs when done late in the design process.",
-        "description": "Fast daylight analysis tool that helps architects and engineers optimize natural lighting in building designs.",
+        "solution": "Fast daylight analysis tool that helps architects and engineers optimize natural lighting in building designs.",
         "features": [
           "Real-time calculations",
           "3D visualization", 
@@ -28,14 +28,15 @@
     },
     {
       "icon": {
-        "type": "svg",
-        "path": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+        "type": "image",
+        "src": "/images/coming_soon_2.svg",
+        "alt": "Coming soon icon"
       },
       "content": {
         "name": "LCA ASSISTANT",
         "subtitle": "Carbon footprint analysis tool",
         "problem": "Carbon footprint analysis is complex and requires specific knowledge. It will become mandatory in the future, but the accessibility barrier is high.",
-        "description": "Accessible carbon footprint analysis tool that helps assess building performance.",
+        "solution": "Accessible carbon footprint analysis tool that helps assess building performance.",
         "features": [
           "CO2 tracking",
           "Material analysis", 

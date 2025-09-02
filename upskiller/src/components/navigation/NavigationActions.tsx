@@ -10,7 +10,7 @@ interface NavigationActionsProps {
 
 export const NavigationActions: React.FC<NavigationActionsProps> = ({ scrollToSection }) => {
   return (
-    <div className="flex items-center space-x-4">
+    <div className="navigation-actions">
       <SharedButton
         appearance={{ 
           variant: "contact", 
@@ -22,8 +22,8 @@ export const NavigationActions: React.FC<NavigationActionsProps> = ({ scrollToSe
         Contact us
       </SharedButton>
       
-      <div className="md:hidden">
-        <button className="text-dark hover:text-primary-600 cursor-pointer">
+      <div className="mobile-menu-button">
+        <button className="mobile-menu-button">
           <MenuIcon />
         </button>
       </div>

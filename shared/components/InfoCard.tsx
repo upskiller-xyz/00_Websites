@@ -6,6 +6,7 @@ import { ButtonBase } from '../types/button.types';
 interface InfoCardContent extends Partial<ProductContent> {
   title?: string;
   name?: string;
+  solution?: string;
   descriptionLabel?: string;
   icon?: React.ReactNode;
   items?: string[];
@@ -34,6 +35,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
     name,
     subtitle,
     problem,
+    solution,
     description,
     descriptionLabel,
     icon,
@@ -62,64 +64,76 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
   return (
     <div 
-      className={`info-card transition-all duration-300 ${className}`}
+      className={`info-card ${className}`}
       onClick={onClick}
     >
-      {/* Content Area with padding */}
+      {/* Image (optional) */}
+      {icon && (
+        <div className="info-card-image">
+          {icon}
+        </div>
+      )}
+      
+      {/* Title */}
+      <div className="info-card-header">
+        <h3 className="info-card-title">
+          {displayTitle}
+        </h3>
+        {/* Subtitle */}
+        {subtitle && (
+          <p className="info-card-subtitle">
+            {subtitle}
+          </p>
+        )}
+      </div>
+      
+      {/* Content - 3 InfoCard elements for products */}
       <div className="info-card-content">
-        {/* Top Content */}
-        <div className="space-y-6">
-          {/* Header with Icon */}
-          {icon && (
-            <div className="w-full">
-              <div className="w-full flex items-center justify-center">
-                {icon}
-              </div>
-            </div>
-          )}
-          
-          {/* Title and Description */}
-          <div className="space-y-3">
-            <div>
-              <h3 className="info-card-title font-bold text-dark text-3xl">
-                {displayTitle}
-              </h3>
-              {subtitle && (
-                <p className="text-lg text-dark font-medium">
-                  {subtitle}
-                </p>
-              )}
-            </div>
-            {problem && (
-              <p className="text-dark leading-relaxed">
-                <strong>Problem:</strong> {problem}
-              </p>
-            )}
-            <p className="text-dark leading-relaxed">
+        {/* Problem element */}
+        {problem && (
+          <div className="info-card-element">
+            <p className="info-card-text">
+              <strong>Problem:</strong> {problem}
+            </p>
+          </div>
+        )}
+        
+        {/* Solution element */}
+        {solution && (
+          <div className="info-card-element">
+            <p className="info-card-text">
+              <strong>Solution:</strong> {solution}
+            </p>
+          </div>
+        )}
+        
+        {/* Description element (if no problem/solution structure) */}
+        {!problem && !solution && description && (
+          <div className="info-card-element">
+            <p className="info-card-text">
               {descriptionLabel && <strong>{descriptionLabel}:</strong>} {description}
             </p>
           </div>
-          
-          {/* Items List */}
-          {displayItems && displayItems.length > 0 && (
-            <div className="space-y-3">
-              <h4 className="font-medium text-dark">{itemsLabel}</h4>
-              <div className="space-y-2">
+        )}
+        
+        {/* Key Features element */}
+        {displayItems && displayItems.length > 0 && (
+          <div className="info-card-element">
+            <div className="info-card-features">
+              <strong className="info-card-features-title">{itemsLabel}</strong>
+              <ul className="info-card-features-list">
                 {displayItems.map((item, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <div className="info-card-bullet"></div>
-                    <span className="text-sm text-dark">
-                      {item}
-                    </span>
-                  </div>
+                  <li key={index} className="info-card-feature-item">
+                    {item}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
       
-      {/* Button Area with its own padding */}
+      {/* Button (optional) */}
       {showButton && buttonText && (
         <div className="info-card-button-area">
           <div className={`info-card-button-wrapper ${buttonDisabled ? 'disabled' : ''}`}>

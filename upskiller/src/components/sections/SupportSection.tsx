@@ -24,7 +24,7 @@ const SupportSection: React.FC = () => {
     <Section id="support" theme="support">
       <SectionHeader 
         content={{
-          title: "Collaborating with",
+          title: "Trusted by",
           theme: 'dark'
         }}
       />
