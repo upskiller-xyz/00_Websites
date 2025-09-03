@@ -1,5 +1,7 @@
 import React from 'react';
 import { ContactMethod } from '../types/contact.types';
+import { ContactButtonIcon } from './ContactButtonIcon';
+import { ContactButtonLabel } from './ContactButtonLabel';
 
 interface ContactButtonProps {
   contact: ContactMethod;
@@ -22,12 +24,12 @@ const ContactButton: React.FC<ContactButtonProps> = ({
       rel={isExternal ? 'noopener noreferrer' : undefined}
       className={`contact-button ${className}`}
     >
-      <div className="contact-button-icon">
+      <ContactButtonIcon>
         {icon}
-      </div>
-      <div>
-        <div className="contact-button-text">{value}</div>
-      </div>
+      </ContactButtonIcon>
+      <ContactButtonLabel>
+        {value}
+      </ContactButtonLabel>
     </a>
   );
 };

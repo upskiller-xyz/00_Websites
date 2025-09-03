@@ -27,16 +27,15 @@ export function SharedButton({
   const { onClick, disabled = false } = behavior;
   const classes = `btn-base btn-${variant} btn-${size} ${disabled ? 'btn-disabled' : 'btn-enabled'} ${className}`;
   
-  const contactStyle = variant === 'contact' ? { 
-    backgroundColor: disabled ? 'var(--color-secondary)' : 'var(--color-accent)'
-  } : {};
   
   return (
     <button 
       className={classes} 
-      onClick={disabled ? undefined : onClick} 
-      style={contactStyle}
+      onClick={disabled ? undefined : onClick}
       disabled={disabled}
+      style={variant === 'contact' ? { 
+        backgroundColor: disabled ? 'var(--color-secondary)' : 'var(--color-accent)'
+      } : undefined}
     >
       {children}
     </button>
