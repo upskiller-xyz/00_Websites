@@ -28,7 +28,6 @@ const FollowUs: React.FC = () => {
 
   return (
     <div className="follow-us-section">
-      <ContentTitle title="Follow Us" level={3} className="follow-us-title" />
       <SocialLinkGrid socialLinks={socialLinks} />
     </div>
   );
