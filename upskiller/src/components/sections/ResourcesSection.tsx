@@ -41,7 +41,7 @@ const ResourcesSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
         <NewsCard className="transition-all duration-300" />
         {resources.map((resource) => {
           const displayConfig = {
@@ -57,7 +57,8 @@ const ResourcesSection: React.FC = () => {
           };
           
           const cardConfig = {
-            className: "transition-all duration-300"
+            className: `transition-all duration-300 resource-${resource.config.id}`,
+            style: resource.config.id === 'articles' ? { '--resource-id': 'articles' } : {}
           };
 
           return (

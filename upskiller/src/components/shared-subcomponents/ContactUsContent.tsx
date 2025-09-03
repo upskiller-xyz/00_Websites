@@ -23,7 +23,7 @@ const ContactUsContent: React.FC = () => {
 
   return (
     <div className="contact-us-content">
-      <ContentTitle title="Contact Us" theme="contact" />
+      {/* <ContentTitle title="Contact Us" theme="contact" /> */}
       <ContactGrid contactMethods={contactMethods} />
     </div>
   );
