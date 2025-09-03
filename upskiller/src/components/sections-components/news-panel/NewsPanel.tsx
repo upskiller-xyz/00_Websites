@@ -24,7 +24,7 @@ export const NewsPanel: React.FC<NewsPanelProps> = ({
   title = "News",
   description = "Stay updated with our latest announcements and company developments",
   className = '',
-  style = { backgroundColor: 'var(--color-secondary)' }
+  style = {}
 }) => {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -58,16 +58,18 @@ export const NewsPanel: React.FC<NewsPanelProps> = ({
     });
   };
 
+  const finalStyle = { backgroundColor: 'var(--color-secondary)', ...style };
+
   if (loading) {
-    return <NewsLoading className={className} style={style} />;
+    return <NewsLoading className={className} style={finalStyle} />;
   }
 
   if (error) {
-    return <NewsError error={error} className={className} style={style} />;
+    return <NewsError error={error} className={className} style={finalStyle} />;
   }
 
   return (
-    <NewsPanelWrapper className={className} style={style}>
+    <NewsPanelWrapper className={className} style={finalStyle}>
       <NewsPanelHeading title={title} description={description} />
       <NewsItemsList items={newsItems} />
     </NewsPanelWrapper>

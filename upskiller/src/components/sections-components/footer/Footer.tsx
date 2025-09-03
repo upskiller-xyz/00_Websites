@@ -1,9 +1,13 @@
 import React from 'react';
-import FooterContent from '../../shared-subcomponents/FooterContent';
+import FooterCopyright from './FooterCopyright';
+import FooterLinks from './FooterLinks';
 
 const Footer: React.FC = () => (
   <div className="footer-container">
-    <FooterContent />
+    <div className="footer-content">
+      <FooterCopyright />
+      <FooterLinks />
+    </div>
   </div>
 );
 

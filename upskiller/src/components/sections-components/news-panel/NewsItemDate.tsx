@@ -17,7 +17,7 @@ export const NewsItemDate: React.FC<NewsItemDateProps> = ({
   };
 
   return (
-    <p className="text-dark/70" style={{ fontSize: '10px', marginBottom: '0' }}>
+    <p className="text-dark/70 news-item-date">
       {formatDate(date)}
     </p>
   );

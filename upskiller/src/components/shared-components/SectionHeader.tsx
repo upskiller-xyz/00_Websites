@@ -17,17 +17,15 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   content, 
   className = '' 
 }) => (
-  <div className={`section-header ${className}`}>
-    <div className="section-header-spacing">
-      <SectionTitle theme={content.theme}>
-        {content.title}
-      </SectionTitle>
-      {content.subtitle && (
-        <SectionSubtitle>
-          {content.subtitle}
-        </SectionSubtitle>
-      )}
-    </div>
+  <div className={`section-header section-header-spacing ${className}`}>
+    <SectionTitle theme={content.theme}>
+      {content.title}
+    </SectionTitle>
+    {content.subtitle && (
+      <SectionSubtitle>
+        {content.subtitle}
+      </SectionSubtitle>
+    )}
   </div>
 );
 

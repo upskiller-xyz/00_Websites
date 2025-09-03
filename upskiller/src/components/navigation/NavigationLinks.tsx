@@ -20,19 +20,17 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
 
   return (
     <div className={`navigation-links ${
-      // isScrolled ? 'bg-white/20 backdrop-blur-sm' :
        'bg-transparent'
     }`}>
       {Array.from(navItems.entries()).map(([sectionId, label]) => (
         <button
           key={sectionId}
           onClick={() => scrollToSection(sectionId)}
-          className={`transition-colors duration-200 cursor-pointer ${
+          className={`transition-colors duration-200 cursor-pointer navigation-link-text ${
             activeSection === sectionId
               ? 'font-medium'
               : 'hover:opacity-80'
           }`}
-          style={{ color: '#f4fffa' }}
         >
           {label}
         </button>

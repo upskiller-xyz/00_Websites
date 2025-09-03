@@ -1,7 +1,7 @@
 import React from 'react';
 import ComponentGrid from '../../shared-components/ComponentGrid';
 import { GridType } from '../../../constants/grid-types.enums';
-import HeroTextContainer from '../../shared-subcomponents/HeroTextContainer';
+import HeroTextGroup from '../../shared-subcomponents/HeroTextGroup';
 
 interface HeroContentProps {
   textContainerRef: React.RefObject<HTMLDivElement>;
@@ -11,10 +11,9 @@ interface HeroContentProps {
 const HeroContent: React.FC<HeroContentProps> = ({ textContainerRef, visibleElements }) => (
   <div className="section-content relative z-10">
     <ComponentGrid gridType={GridType.HERO}>
-      <HeroTextContainer 
-        textContainerRef={textContainerRef}
-        visibleElements={visibleElements}
-      />
+      <div ref={textContainerRef} className="hero-text-container">
+        <HeroTextGroup visibleElements={visibleElements} />
+      </div>
     </ComponentGrid>
   </div>
 );

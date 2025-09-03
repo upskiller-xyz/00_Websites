@@ -7,7 +7,7 @@ interface NewsItemDescriptionProps {
 export const NewsItemDescription: React.FC<NewsItemDescriptionProps> = ({
   description
 }) => (
-  <p className="text-dark leading-relaxed text-sm" style={{ marginBottom: '2px' }}>
+  <p className="text-dark leading-relaxed text-sm news-item-description">
     {description}
   </p>
 );

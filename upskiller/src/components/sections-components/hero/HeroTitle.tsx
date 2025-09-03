@@ -9,10 +9,9 @@ const HeroTitle: React.FC<HeroTitleProps> = ({ isVisible, children }) => (
   <h1 
     data-animate
     data-index="0"
-    className={`hero-title ${
+    className={`hero-title automate-font ${
       isVisible ? 'hero-element-visible' : 'hero-element-hidden'
     }`}
-    style={{ fontFamily: 'var(--font-automate)' }}
   >
     {children}
   </h1>

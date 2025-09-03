@@ -14,17 +14,15 @@ interface PartnersGridProps {
 
 const PartnersGrid: React.FC<PartnersGridProps> = ({ partners }) => {
   return (
-    <div className="support-partners">
-      <div className="support-partners-grid">
-        {partners.map((partner) => (
-          <Partner
-            key={partner.id}
-            name={partner.name}
-            logo={partner.logo}
-            size={partner.size}
-          />
-        ))}
-      </div>
+    <div className="support-partners support-partners-grid">
+      {partners.map((partner) => (
+        <Partner
+          key={partner.id}
+          name={partner.name}
+          logo={partner.logo}
+          size={partner.size}
+        />
+      ))}
     </div>
   );
 };

@@ -8,15 +8,19 @@ interface NewsPanelWrapperProps {
 
 export const NewsPanelWrapper: React.FC<NewsPanelWrapperProps> = ({
   className = '',
-  style = { backgroundColor: 'var(--color-secondary)' },
+  style = {},
   children
-}) => (
-  <div 
-    className={`news-card transition-all duration-300 ${className}`}
-    style={style}
-  >
-    <div className="news-card-content">
-      {children}
+}) => {
+  const finalStyle = { backgroundColor: 'var(--color-secondary)', ...style };
+  
+  return (
+    <div 
+      className={`news-card transition-all duration-300 ${className}`}
+      style={finalStyle}
+    >
+      <div className="news-card-content">
+        {children}
+      </div>
     </div>
-  </div>
-);
+  );
+};

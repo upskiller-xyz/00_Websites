@@ -11,7 +11,7 @@ const MemberDetailItem: React.FC<MemberDetailItemProps> = ({ detailType, value }
 
   return (
     <div>
-      <span style={{ fontWeight: 700 }}>{label}</span>{" "}
+      <span className="font-bold">{label}</span>{" "}
       <span className="font-light">{value}</span>
     </div>
   );

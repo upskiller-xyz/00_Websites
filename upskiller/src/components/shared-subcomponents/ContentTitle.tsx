@@ -33,7 +33,7 @@ const ContentTitle: React.FC<ContentTitleProps> = ({
 
   const finalClasses = `${baseClasses} ${themeClasses[theme]} ${sizeClasses[level]} ${className}`;
 
-  return <Tag className={finalClasses} style={{ fontFamily: 'var(--font-automate)' }}>{title}</Tag>;
+  return <Tag className={`${finalClasses} automate-font`}>{title}</Tag>;
 };
 
 export default ContentTitle;

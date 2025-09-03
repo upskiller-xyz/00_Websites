@@ -18,10 +18,8 @@ export const NewsItem: React.FC<NewsItemProps> = ({
   url
 }) => (
   <div className="last:border-b-0">
-    <div>
-      <NewsItemTitle title={title} url={url} />
-      <NewsItemDescription description={description} />
-      <NewsItemDate date={date} />
-    </div>
+    <NewsItemTitle title={title} url={url} />
+    <NewsItemDescription description={description} />
+    <NewsItemDate date={date} />
   </div>
 );

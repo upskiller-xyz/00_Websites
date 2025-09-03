@@ -1,13 +1,11 @@
 // src/components/sections/ResourcesSection.tsx
 import React, { useState, useEffect } from 'react';
-import { InfoCard, NewsCard } from '@shared/components';
+import { InfoCard } from '../sections-components/info-card/InfoCard';
+import { NewsCard } from '../sections-components/news-card/NewsCard'
 import Section from '../shared-components/Section';
-import SectionGrid from '../shared-components/SectionGrid';
-import SectionHeader from '../shared-components/SectionHeader';
 import ContactUs from '../sections-components/ContactUs';
 import FollowUs from '../sections-components/FollowUs';
 import Footer from '../sections-components/footer/Footer';
-import { ArticlesIcon } from '../svg';
 import { Product } from '@shared/types';
 
 const ResourcesSection: React.FC = () => {
@@ -38,10 +36,7 @@ const ResourcesSection: React.FC = () => {
     <Section id="resources" theme="primary">
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold" style={{ 
-            color: 'rgb(244, 255, 250)', 
-            fontFamily: 'var(--font-automate)' 
-          }}>
+          <h2 className="text-4xl lg:text-5xl font-bold resources-title">
             Resources
           </h2>
         </div>
@@ -50,7 +45,7 @@ const ResourcesSection: React.FC = () => {
         <NewsCard className="transition-all duration-300" />
         {resources.map((resource) => {
           const displayConfig = {
-            descriptionLabel: "What you'll find:",
+            descriptionLabel: "",
             itemsLabel: "What you'll find:",
             // icon: getResourceIcon(resource.content.name)
           };

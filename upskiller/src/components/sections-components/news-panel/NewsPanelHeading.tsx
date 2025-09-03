@@ -1,6 +1,4 @@
 import React from 'react';
-import { NewsPanelTitle } from './NewsPanelTitle';
-import { NewsPanelDescription } from './NewsPanelDescription';
 
 interface NewsPanelHeadingProps {
   title: string;
@@ -11,8 +9,12 @@ export const NewsPanelHeading: React.FC<NewsPanelHeadingProps> = ({
   title,
   description
 }) => (
-  <div className="space-y-4 mb-8">
-    <NewsPanelTitle title={title} />
-    <NewsPanelDescription description={description} />
-  </div>
+  <>
+    <h3 className="news-card-title font-bold text-dark text-3xl mb-4">
+      {title}
+    </h3>
+    <p className="text-dark leading-relaxed mb-8">
+      {description}
+    </p>
+  </>
 );

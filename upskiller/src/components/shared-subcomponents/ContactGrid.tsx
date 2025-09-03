@@ -16,7 +16,6 @@ const ContactGrid: React.FC<ContactGridProps> = ({ contactMethods }) => {
       GitHub: <GitHubIcon />
     };
     const icon = iconMap[type as keyof typeof iconMap] || null;
-    console.log('ContactGrid getContactIcon:', { type, icon, hasIcon: !!icon });
     return icon;
   };
 

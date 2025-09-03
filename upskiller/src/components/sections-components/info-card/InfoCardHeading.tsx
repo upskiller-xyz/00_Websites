@@ -11,8 +11,8 @@ export const InfoCardHeading: React.FC<InfoCardHeadingProps> = ({
   title,
   subtitle
 }) => (
-  <div>
+  <>
     <InfoCardTitle title={title} />
     {subtitle && <InfoCardSubtitle subtitle={subtitle} />}
-  </div>
+  </>
 );
