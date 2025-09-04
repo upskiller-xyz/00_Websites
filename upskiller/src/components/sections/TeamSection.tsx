@@ -5,6 +5,7 @@ import SectionHeader from '../shared-components/SectionHeader';
 import TeamContentArea from '../sections-components/team/TeamContentArea';
 import TeamTabs from '../sections-components/team/TeamTabs';
 import { TeamMember, TeamTab } from '@shared/types';
+import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 
 const TeamSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('team');
@@ -13,8 +14,10 @@ const TeamSection: React.FC = () => {
   useEffect(() => {
     const fetchTeamData = async () => {
       try {
-        const response = await fetch('/team.json');
-        const data = await response.json();
+        const data = await fetchJsonWithFallback(
+          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/team.json',
+          '/dynamic/team.json'
+        );
         setTeamMembers(data.teamMembers);
       } catch (error) {
         console.error('Error loading team data:', error);

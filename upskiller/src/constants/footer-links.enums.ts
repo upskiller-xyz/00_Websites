@@ -12,14 +12,14 @@ export interface FooterLinkData {
 export const FOOTER_LINKS_MAP: Record<FooterLinkType, FooterLinkData> = {
   [FooterLinkType.PRIVACY_POLICY]: {
     text: 'Privacy Policy',
-    href: '#'
+    href: '/privacy'
   },
   [FooterLinkType.TERMS_OF_SERVICE]: {
-    text: 'Terms of Service',
-    href: '#'
+    text: 'Terms',
+    href: '/terms'
   },
   [FooterLinkType.LEGAL_INFO]: {
     text: 'Legal Info',
-    href: '#'
+    href: '/info'
   }
 };

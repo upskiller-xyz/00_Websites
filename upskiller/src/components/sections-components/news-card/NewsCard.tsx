@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LoadingState } from '../../loading/LoadingState';
 import { ErrorState } from '../../loading/ErrorState';
 import { NewsCardContent } from './NewsCardContent';
+import { fetchJsonWithFallback } from '../../../utils/fetchWithFallback';
 
 interface NewsItem {
   id: number;
@@ -31,15 +32,16 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch('/news.json');
-        if (!response.ok) {
-          throw new Error('Failed to fetch news');
-        }
-        const data: NewsItem[] = await response.json();
+        const data: NewsItem[] = await fetchJsonWithFallback(
+          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/news.json',
+          '/dynamic/news.json'
+        );
         setNewsItems(data.slice(0, 4));
         setLoading(false);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
+        const errorMessage = err instanceof Error ? err.message : 'An error occurred';
+        console.error('News fetch error:', errorMessage);
+        setError(errorMessage);
         setLoading(false);
       }
     };

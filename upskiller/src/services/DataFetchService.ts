@@ -1,4 +1,5 @@
 import { DataFile } from '../constants/data-files.enums';
+import { fetchJsonWithFallback } from '../utils/fetchWithFallback';
 
 export class DataFetchService {
   private static cache = new Map<string, any>();
@@ -9,12 +10,10 @@ export class DataFetchService {
     }
 
     try {
-      const response = await fetch(`/${fileName}`);
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${fileName}: ${response.statusText}`);
-      }
-      
-      const data = await response.json();
+      const data = await fetchJsonWithFallback(
+        `https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/${fileName}`,
+        `/dynamic/${fileName}`
+      );
       this.cache.set(fileName, data);
       return data;
     } catch (error) {

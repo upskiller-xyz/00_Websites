@@ -605,14 +605,18 @@ section{
 
 /* Footer Styles */
 .footer-container {
-  @apply mt-16 pt-8 text-center;
-  border-top: 1px solid var(--color-border-dark);
+  /* margin-top: calc(var(--spacing) * 16); */
+  /* padding-top: calc(var(--spacing) * 8); */
+  text-align: center;
+  /* border-top: 1px solid var(--color-border-dark); */
   padding-left: 2rem;
   padding-right: 2rem;
+  background-color: var(--color-primary);
 }
 
 .footer-content {
   @apply flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0;
+  padding-bottom: 1rem;
 }
 
 .footer-copyright {
@@ -1075,5 +1079,79 @@ h1, h2, h3, h4, h5, h6 {
   .resource-articles {
     display: none !important;
   }
+}
+
+/* Privacy Page Styles */
+.privacy-page-bg {
+  background-color: var(--color-primary);
+  color: var(--color-secondary-light);
+}
+
+.privacy-header {
+  border-bottom: 1px solid var(--color-primary-600);
+}
+
+.privacy-text {
+  color: var(--color-secondary-light);
+}
+
+.privacy-content {
+  color: var(--color-secondary-light);
+}
+
+.privacy-markdown {
+  color: var(--color-secondary-light);
+  line-height: 1.75;
+}
+
+.privacy-markdown h1,
+.privacy-markdown h2,
+.privacy-markdown h3,
+.privacy-markdown h4,
+.privacy-markdown h5,
+.privacy-markdown h6 {
+  color: var(--color-secondary-light);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.privacy-markdown h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.privacy-markdown h2 {
+  font-size: 1.75rem;
+}
+
+.privacy-markdown h3 {
+  font-size: 1.5rem;
+}
+
+.privacy-markdown p {
+  margin-bottom: 1rem;
+  color: var(--color-secondary-light);
+}
+
+.privacy-markdown ul,
+.privacy-markdown ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: var(--color-secondary-light);
+}
+
+.privacy-markdown li {
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary-light);
+}
+
+.privacy-markdown strong {
+  font-weight: 600;
+  color: var(--color-secondary-light);
+}
+
+.privacy-footer-bg {
+  background-color: var(--color-primary);
 }
 

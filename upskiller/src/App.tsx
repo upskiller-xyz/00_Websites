@@ -1,25 +1,20 @@
 // src/App.tsx
 import React from "react";
-import Navigation from "./components/Navigation";
-import { 
-  HeroSection, 
-  SupportSection, 
-  TeamSection, 
-  ProductsSection, 
-  ResourcesSection 
-} from "./components/sections";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/pages/HomePage";
+import PrivacyPage from "./components/pages/PrivacyPage";
+import TermsPage from "./components/pages/TermsPage";
+import AboutPage from "./components/pages/AboutPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <HeroSection />
-        <SupportSection />
-        <TeamSection />
-        <ProductsSection />
-        <ResourcesSection />
-      </main>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </Router>
   );
 }

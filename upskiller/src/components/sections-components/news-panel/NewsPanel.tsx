@@ -4,6 +4,7 @@ import { NewsPanelHeading } from './NewsPanelHeading';
 import { NewsItemsList } from './NewsItemsList';
 import { NewsLoading } from '../loading/NewsLoading';
 import { NewsError } from '../loading/NewsError';
+import { fetchJsonWithFallback } from '../../../utils/fetchWithFallback';
 
 interface NewsItem {
   id: number;
@@ -33,11 +34,10 @@ export const NewsPanel: React.FC<NewsPanelProps> = ({
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch('/news.json');
-        if (!response.ok) {
-          throw new Error('Failed to fetch news');
-        }
-        const data: NewsItem[] = await response.json();
+        const data: NewsItem[] = await fetchJsonWithFallback(
+          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/news.json',
+          '/dynamic/news.json'
+        );
         setNewsItems(data.slice(0, 4));
         setLoading(false);
       } catch (err) {

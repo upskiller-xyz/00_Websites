@@ -5,8 +5,8 @@ import { NewsCard } from '../sections-components/news-card/NewsCard'
 import Section from '../shared-components/Section';
 import ContactUs from '../sections-components/ContactUs';
 import FollowUs from '../sections-components/FollowUs';
-import Footer from '../sections-components/footer/Footer';
 import { Product } from '@shared/types';
+import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 
 const ResourcesSection: React.FC = () => {
   const [resources, setResources] = useState<Product[]>([]);
@@ -14,8 +14,10 @@ const ResourcesSection: React.FC = () => {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await fetch('/resources.json');
-        const data = await response.json();
+        const data = await fetchJsonWithFallback(
+          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/resources.json',
+          '/dynamic/resources.json'
+        );
         setResources(data.resources);
       } catch (error) {
         console.error('Error loading resources:', error);
@@ -79,7 +81,6 @@ const ResourcesSection: React.FC = () => {
 
         <ContactUs />
         <FollowUs />
-        <Footer />
       </div>
     </Section>
   );

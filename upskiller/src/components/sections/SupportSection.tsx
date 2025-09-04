@@ -3,6 +3,7 @@ import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import PartnersGrid from '../sections-components/partners/PartnersGrid';
 import { Partner } from '@shared/types';
+import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 
 const SupportSection: React.FC = () => {
   const [partners, setPartners] = useState<Partner[]>([]);
@@ -10,8 +11,10 @@ const SupportSection: React.FC = () => {
   useEffect(() => {
     const fetchPartners = async () => {
       try {
-        const response = await fetch('/partners.json');
-        const data = await response.json();
+        const data = await fetchJsonWithFallback(
+          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/partners.json',
+          '/dynamic/partners.json'
+        );
         setPartners(data.partners);
       } catch (error) {
         console.error('Error loading partners:', error);

@@ -4,6 +4,7 @@ import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import ProductGrid from '../sections-components/ProductGrid';
 import { Product } from '@shared/types';
+import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 
 const ProductsSection: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -11,8 +12,10 @@ const ProductsSection: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/products.json');
-        const data = await response.json();
+        const data = await fetchJsonWithFallback(
+          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/products.json',
+          '/dynamic/products.json'
+        );
         setProducts(data.products);
       } catch (error) {
         console.error('Error loading products:', error);
