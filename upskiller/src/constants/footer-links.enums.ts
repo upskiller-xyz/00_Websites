@@ -20,6 +20,6 @@ export const FOOTER_LINKS_MAP: Record<FooterLinkType, FooterLinkData> = {
   },
   [FooterLinkType.LEGAL_INFO]: {
     text: 'Legal Info',
-    href: '/info'
+    href: '/about'
   }
 };
