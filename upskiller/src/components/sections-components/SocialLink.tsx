@@ -1,10 +1,11 @@
 import React from 'react';
 import { SharedLink, SharedImage } from '@shared/components';
+import AssetPathManager from '../../utils/AssetPathManager';
 
 interface SocialLinkProps {
   name: string;
   url: string;
-  icon: string;
+  icon: string; // Now expects filename only, not full URL
 }
 
 const SocialLink: React.FC<SocialLinkProps> = ({ name, url, icon }) => (
@@ -15,7 +16,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ name, url, icon }) => (
     title={`Follow us on ${name}`}
   >
     <SharedImage 
-      src={icon} 
+      src={AssetPathManager.getSocialIcon(icon)} 
       alt={`${name} icon`}
       className="social-link-icon brand-color-filter"
     />

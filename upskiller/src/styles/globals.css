@@ -701,6 +701,80 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: contain;
   object-position: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.team-action-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+.team-action-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Interactive Team Image Styles */
+.team-mask-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.team-mask-area {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.team-mask-area:hover {
+  transform: scale(1.01);
+}
+
+.team-mask-highlight {
+  fill: rgba(16, 185, 129, 0.15);
+  pointer-events: none;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    opacity: 0.1;
+    fill: rgba(16, 185, 129, 0.1);
+  }
+  50% { 
+    opacity: 0.2;
+    fill: rgba(16, 185, 129, 0.2);
+  }
+}
+
+.team-loading-indicator {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.team-loading-indicator.visible {
+  opacity: 1;
+}
+
+.team-loading-text {
+  color: white;
+  font-size: 0.875rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  backdrop-filter: blur(4px);
 }
 
 @media (min-width: 1024px) {

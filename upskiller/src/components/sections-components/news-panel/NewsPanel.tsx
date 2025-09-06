@@ -5,6 +5,7 @@ import { NewsItemsList } from './NewsItemsList';
 import { NewsLoading } from '../loading/NewsLoading';
 import { NewsError } from '../loading/NewsError';
 import { fetchJsonWithFallback } from '../../../utils/fetchWithFallback';
+import AssetPathManager from '../../../utils/AssetPathManager';
 
 interface NewsItem {
   id: number;
@@ -35,7 +36,7 @@ export const NewsPanel: React.FC<NewsPanelProps> = ({
     const fetchNews = async () => {
       try {
         const data: NewsItem[] = await fetchJsonWithFallback(
-          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/news.json',
+          AssetPathManager.getDynamicData('news.json'),
           '/dynamic/news.json'
         );
         setNewsItems(data.slice(0, 4));

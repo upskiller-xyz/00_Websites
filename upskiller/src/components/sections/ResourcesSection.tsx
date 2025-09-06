@@ -7,6 +7,7 @@ import ContactUs from '../sections-components/ContactUs';
 import FollowUs from '../sections-components/FollowUs';
 import { Product } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
+import AssetPathManager from '../../utils/AssetPathManager';
 
 const ResourcesSection: React.FC = () => {
   const [resources, setResources] = useState<Product[]>([]);
@@ -15,7 +16,7 @@ const ResourcesSection: React.FC = () => {
     const fetchResources = async () => {
       try {
         const data = await fetchJsonWithFallback(
-          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/resources.json',
+          AssetPathManager.getDynamicData('resources.json'),
           '/dynamic/resources.json'
         );
         setResources(data.resources);

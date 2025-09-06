@@ -1,16 +1,17 @@
 import React from 'react';
-import TeamImage from './TeamImage';
+import InteractiveTeamImage from './InteractiveTeamImage';
 import TeamContent from './TeamContent';
 import TeamContentRenderer from './TeamContentRenderer';
 import { TeamMember } from '@shared/types';
 
 interface TeamContentAreaProps {
   currentMember?: TeamMember;
+  onMemberHover?: (memberId: string | null) => void;
 }
 
-const TeamContentArea: React.FC<TeamContentAreaProps> = ({ currentMember }) => (
+const TeamContentArea: React.FC<TeamContentAreaProps> = ({ currentMember, onMemberHover }) => (
   <div className="overflow-hidden team-content-area">
-    <TeamImage />
+    <InteractiveTeamImage onMemberHover={onMemberHover} />
     <TeamContent socials={currentMember?.socials || {}}>
       {currentMember && <TeamContentRenderer member={currentMember} />}
     </TeamContent>

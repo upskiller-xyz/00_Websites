@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AssetPathManager from '../../utils/AssetPathManager';
 
 interface PageHeaderProps {
   className?: string;
@@ -11,7 +12,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ className = "" }) => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <Link to="/" className="inline-block">
           <img
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/upskiller_logo_RGB.svg"
+            src={AssetPathManager.getNavigationLogo()}
             alt="Upskiller"
             className="h-8 w-auto"
           />

@@ -5,6 +5,7 @@ import SectionHeader from '../shared-components/SectionHeader';
 import ProductGrid from '../sections-components/ProductGrid';
 import { Product } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
+import AssetPathManager from '../../utils/AssetPathManager';
 
 const ProductsSection: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -13,7 +14,7 @@ const ProductsSection: React.FC = () => {
     const fetchProducts = async () => {
       try {
         const data = await fetchJsonWithFallback(
-          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/products.json',
+          AssetPathManager.getDynamicData('products.json'),
           '/dynamic/products.json'
         );
         setProducts(data.products);

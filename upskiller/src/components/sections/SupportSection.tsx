@@ -4,6 +4,7 @@ import SectionHeader from '../shared-components/SectionHeader';
 import PartnersGrid from '../sections-components/partners/PartnersGrid';
 import { Partner } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
+import AssetPathManager from '../../utils/AssetPathManager';
 
 const SupportSection: React.FC = () => {
   const [partners, setPartners] = useState<Partner[]>([]);
@@ -12,7 +13,7 @@ const SupportSection: React.FC = () => {
     const fetchPartners = async () => {
       try {
         const data = await fetchJsonWithFallback(
-          'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/partners.json',
+          AssetPathManager.getDynamicData('partners.json'),
           '/dynamic/partners.json'
         );
         setPartners(data.partners);

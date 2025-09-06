@@ -1,5 +1,6 @@
 import { DataFile } from '../constants/data-files.enums';
 import { fetchJsonWithFallback } from '../utils/fetchWithFallback';
+import AssetPathManager from '../utils/AssetPathManager';
 
 export class DataFetchService {
   private static cache = new Map<string, any>();
@@ -11,7 +12,7 @@ export class DataFetchService {
 
     try {
       const data = await fetchJsonWithFallback(
-        `https://upskiller-website.s3.fr-par.scw.cloud/upskiller/dynamic/${fileName}`,
+        AssetPathManager.getDynamicData(fileName),
         `/dynamic/${fileName}`
       );
       this.cache.set(fileName, data);

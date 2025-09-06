@@ -141,7 +141,73 @@ npm install
 
 ---
 
-### 🏃‍♂️ Step 6: Start the Development Server
+### 📥 Step 6: Download Required Assets for Local Development
+
+For local development, you need to download dynamic JSON files and SVG image masks to enable full functionality.
+
+#### **Download Dynamic JSON Files**
+
+Create the dynamic folder and download JSON files:
+
+```bash
+# Create the dynamic folder
+mkdir -p upskiller/public/dynamic
+
+# Download dynamic data files (replace with actual download commands or manual download)
+# You'll need these files from the cloud bucket:
+# - team.json
+# - products.json  
+# - resources.json
+# - partners.json
+# - news.json
+# - social-links.json
+```
+
+**Required JSON files:**
+- `upskiller/public/dynamic/team.json` - Team member information
+- `upskiller/public/dynamic/products.json` - Product/service data
+- `upskiller/public/dynamic/resources.json` - Resource content
+- `upskiller/public/dynamic/partners.json` - Partner information
+- `upskiller/public/dynamic/news.json` - News and updates
+- `upskiller/public/dynamic/social-links.json` - Social media links
+
+#### **Download SVG Image Masks**
+
+The interactive team image functionality requires SVG mask files:
+
+```bash
+# Create the masks folder  
+mkdir -p upskiller/public/images
+
+# Download SVG mask files from cloud bucket:
+# These should be placed in upskiller/public/images/
+# - mask_alejandro.svg
+# - mask_christoph.svg
+# - mask_libny.svg
+# - mask_stasja.svg
+```
+
+#### **Download Action Images (Optional)**
+
+For team member action images on hover:
+
+```bash
+# Create the actions folder  
+mkdir -p upskiller/public/images/actions
+
+# Download action images from cloud bucket:
+# These should be placed in upskiller/public/images/actions/
+# - action_alejandro.png
+# - action_christoph.png
+# - action_libny.png
+# - action_stasja.png
+```
+
+**✨ Automatic Fallback:** The application automatically tries cloud assets first, then falls back to local files if cloud assets are unavailable. This makes local development more resilient.
+
+---
+
+### 🏃‍♂️ Step 7: Start the Development Server
 
 ```bash
 # Start the development server
@@ -185,9 +251,13 @@ npm run dev
 │   ├── src/
 │   │   ├── components/        # React components
 │   │   ├── styles/           # CSS styles
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── utils/            # Utility functions (AssetPathManager)
 │   │   ├── App.tsx           # Main app component
 │   │   └── main.tsx          # Entry point
 │   ├── public/               # Static assets
+│   │   ├── dynamic/          # JSON data files (download required)
+│   │   └── images/           # SVG masks & other images (download required)
 │   ├── index.html           # HTML template
 │   ├── package.json         # Dependencies and scripts
 │   └── vite.config.ts       # Build configuration
@@ -306,6 +376,29 @@ npm install
 - Check the file paths in import statements
 - Make sure you're importing React components correctly
 - Verify TypeScript configuration in `tsconfig.json`
+
+### **Missing dynamic content or team interactions not working**
+
+**Symptoms:**
+- Team section shows empty content
+- Interactive hover effects on team image don't work  
+- Product/resource sections show loading states indefinitely
+- Social links missing icons
+
+**Solutions:**
+```bash
+# Check if dynamic JSON files exist
+ls upskiller/public/dynamic/
+
+# Check if SVG masks exist  
+ls upskiller/public/images/mask_*.svg
+
+# If missing, download from cloud bucket or ask team for local copies
+```
+
+**Required files for full functionality:**
+- All JSON files in `upskiller/public/dynamic/` folder
+- All SVG mask files in `upskiller/public/images/` folder
 
 ---
 

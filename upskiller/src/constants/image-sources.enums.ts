@@ -11,25 +11,27 @@ export interface ImageData {
   alt: string;
 }
 
+import AssetPathManager from '../utils/AssetPathManager';
+
 export const IMAGE_SOURCES_MAP: Record<ImageSource, ImageData> = {
   [ImageSource.HERO_MOTIF]: {
-    src: 'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/motif-1.svg',
+    src: AssetPathManager.getHeroMotif(),
     alt: 'Background motif'
   },
   [ImageSource.LOGO]: {
-    src: 'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/logo.svg',
+    src: AssetPathManager.getLogo(),
     alt: 'Upskiller logo'
   },
   [ImageSource.PRODUCT_ICON]: {
-    src: 'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/icons/product.svg',
+    src: AssetPathManager.getProductIcon(),
     alt: 'Product icon'
   },
   [ImageSource.TEAM_IMAGE]: {
-    src: 'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/images/upskiller_team_cyan.png',
+    src: AssetPathManager.getTeamImage(),
     alt: 'Upskiller Team'
   },
   [ImageSource.PARTNER_LOGO]: {
-    src: 'https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/',
+    src: AssetPathManager.getAssetUrl(AssetPathManager.CATEGORIES.LOGOS, ''),
     alt: 'Partner logo'
   }
 };
