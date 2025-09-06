@@ -1,20 +1,20 @@
 import React from 'react';
+import { ContactMethod } from '../types/contact.types';
+import { ContactButtonIcon } from './ContactButtonIcon';
+import { ContactButtonLabel } from './ContactButtonLabel';
 
 interface ContactButtonProps {
-  type: string;
-  value: string;
-  link: string;
+  contact: ContactMethod;
   icon: React.ReactNode;
   className?: string;
 }
 
 const ContactButton: React.FC<ContactButtonProps> = ({
-  type,
-  value,
-  link,
+  contact,
   icon,
   className = ''
 }) => {
+  const { type, value, link } = contact;
   const isExternal = type === 'GitHub';
   
   return (
@@ -22,16 +22,14 @@ const ContactButton: React.FC<ContactButtonProps> = ({
       href={link}
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
-      className={`flex items-center space-x-4 p-4 hover:opacity-80 transition-all duration-200 cursor-pointer ${className}`}
-      style={{ backgroundColor: '#00ff66' }}
+      className={`contact-button ${className}`}
     >
-      <div className="w-10 h-10 bg-primary-500/20 rounded-lg flex items-center justify-center text-primary-400">
+      <ContactButtonIcon>
         {icon}
-      </div>
-      <div>
-        <div className="font-medium text-dark">{type}</div>
-        <div className="text-dark text-sm">{value}</div>
-      </div>
+      </ContactButtonIcon>
+      <ContactButtonLabel>
+        {value}
+      </ContactButtonLabel>
     </a>
   );
 };

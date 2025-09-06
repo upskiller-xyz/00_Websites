@@ -1,370 +1,363 @@
-# 00_Websites
+<a name="readme-top"></a>
 
-Professional websites and tools built with React, TypeScript, and modern web technologies.
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-## 🌟 What's in this repository
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/upskiller-xyz/upskiller.xyz">
+    <img src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/upskiller_logo_RGB.svg" alt="Logo" height="100" >
+  </a>
 
-- **Upskiller** - Main company website with scrolling sections
-- **Shared Components** - Reusable UI components across projects
-- **Modern Tech Stack** - React, TypeScript, Tailwind CSS, Vite
+  <h3 align="center">Upskiller.xyz</h3>
 
----
+  <p align="center">
+    Modern web platform for architectural technology and building performance consulting
+    <br />
+    <a href="https://upskiller.xyz">View Live Site</a>
+    ·
+    <a href="https://github.com/upskiller-xyz/upskiller.xyz/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/upskiller-xyz/upskiller.xyz/issues">Request Feature</a>
+  </p>
+</div>
 
-## 🚀 Getting Started (Complete Guide for New Developers)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#local-assets-setup">Local Assets Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#development">Development</a>
+      <ul>
+        <li><a href="#running-the-development-server">Running the Development Server</a></li>
+        <li><a href="#building-for-production">Building for Production</a></li>
+        <li><a href="#deployment">Deployment</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#project-structure">Project Structure</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Follow these step-by-step instructions to set up the development environment on your machine.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### 📋 Prerequisites
+![Upskiller Website](https://upskiller-website.s3.fr-par.scw.cloud/upskiller/images/upskiller_team_cyan.png)
 
-Before you begin, make sure you have:
+This is the repository for the Upskiller website. It contains:
 
-- A computer running macOS, Windows, or Linux
-- Internet connection
-- Basic familiarity with using the terminal/command line
+* **Interactive team showcase** with SVG-masked hover effects that reveal individual action images
+* **Dynamic content system** loading team data, services, news, and partner information from cloud-hosted JSON
+* **Modern single-page architecture** with smooth scrolling navigation and responsive design
+* **Cloud-first asset management** with automatic local fallbacks for development
+* **All components, hooks, utilities, and styling** to make the interactive features work seamlessly
 
----
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 🔧 Step 1: Install Node.js and npm
+### Built With
 
-Node.js is the runtime that allows us to run JavaScript outside the browser. npm is the package manager that installs our dependencies.
+* [![React][React.js]][React-url]
+* [![TypeScript][TypeScript]][TypeScript-url]
+* [![Vite][Vite]][Vite-url]
+* [![Tailwind CSS][TailwindCSS]][TailwindCSS-url]
 
-#### Option A: Using Node Version Manager (nvm) - **Recommended**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**For macOS/Linux:**
+<!-- GETTING STARTED -->
+## Getting Started
+
+Follow these steps to set up the project locally for development.
+
+### Prerequisites
+
+* **Node.js** (v18.17.0 or higher)
+* **npm** (comes with Node.js)
+* **Git**
+
+### Installation
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/upskiller-xyz/upskiller.xyz.git
+   cd upskiller.xyz
+   ```
+
+2. **Navigate to the website directory**
+   ```sh
+   cd upskiller
+   ```
+
+3. **Install dependencies**
+   ```sh
+   npm install
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Local Assets Setup
+
+For full functionality in local development, you need to download dynamic JSON files and image assets. This is required due to CORS restrictions when fetching from cloud storage.
+
+#### **Required Dynamic JSON Files**
+
+Create the dynamic folder and download JSON files:
 
 ```bash
-# Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+# Create the dynamic folder
+mkdir -p public/dynamic
 
-# Restart your terminal or run this command
-source ~/.bashrc
-
-# Install the latest stable Node.js
-nvm install 24
-nvm use 24
-
-# Verify installation
-node -v    # Should show v24.x.x
-npm -v     # Should show 10.x.x or higher
+# Download these files from cloud storage to public/dynamic/:
+# - team.json          (Team member information)
+# - products.json      (Product/service data)
+# - resources.json     (Resource content)
+# - partners.json      (Partner information)
+# - news.json          (News and updates)
+# - social-links.json  (Social media links)
 ```
 
-**For Windows:**
+#### **Required Image Assets**
+
+For interactive team features:
 
 ```bash
-# Download and install nvm-windows from:
-# https://github.com/coreybutler/nvm-windows/releases
+# Create image folders
+mkdir -p public/images
+mkdir -p public/images/actions
 
-# Then in Command Prompt or PowerShell:
-nvm install 24.3.0
-nvm use 24.3.0
+# Download SVG mask files to public/images/:
+# - mask_alejandro.svg
+# - mask_christoph.svg
+# - mask_libny.svg
+# - mask_stasja.svg
 
-# Verify installation
-node -v
-npm -v
+# Download action images to public/images/actions/:
+# - action_alejandro.png
+# - action_christoph.png
+# - action_libny.png
+# - action_stasja.png
 ```
 
-#### Option B: Direct Installation
+#### **Download Legal Documents**
 
-Download from [nodejs.org](https://nodejs.org/) and install the LTS version.
-
----
-
-### 🔧 Step 2: Install Git (if not already installed)
-
-Git is our version control system.
-
-**Check if Git is installed:**
+For privacy/terms pages:
 
 ```bash
-git --version
+# These are loaded dynamically but need local copies for development:
+# - privacy.md
+# - tc.md (terms and conditions)
+# - about.md
 ```
 
-**If not installed:**
+**✨ Automatic Fallback:** The application tries cloud assets first, then falls back to local files. This makes development resilient to network issues.
 
-- **macOS**: Install Xcode Command Line Tools: `xcode-select --install`
-- **Windows**: Download from [git-scm.com](https://git-scm.com/download/win)
-- **Linux**: `sudo apt install git` (Ubuntu/Debian) or `sudo yum install git` (CentOS/RHEL)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
+<!-- DEVELOPMENT -->
+## Development
 
-### 🔧 Step 3: Install a Code Editor
-
-We recommend **Visual Studio Code** with these extensions:
-
-1. **Download VS Code**: [code.visualstudio.com](https://code.visualstudio.com/)
-
-2. **Install these extensions** (search in VS Code's Extensions panel):
-   - **ES7+ React/Redux/React-Native snippets**
-   - **TypeScript Importer**
-   - **Tailwind CSS IntelliSense**
-   - **Prettier - Code formatter**
-   - **ESLint**
-   - **Auto Rename Tag**
-   - **Bracket Pair Colorizer**
-
----
-
-### 📂 Step 4: Clone the Repository
-
-Open your terminal and navigate to where you want to store the project:
-
-```bash
-# Navigate to your desired directory (e.g., Desktop)
-cd ~/Desktop
-
-# Clone the repository
-git clone https://github.com/upskiller-xyz/00_Websites.git
-
-# Navigate into the project
-cd 00_Websites
-```
-
----
-
-### 📦 Step 5: Install Project Dependencies
-
-Navigate to the project you want to work on and install dependencies:
-
-```bash
-# For the main Upskiller website
-cd upskiller
-
-# Install all dependencies (this may take a few minutes)
-npm install
-```
-
-**What this does:**
-
-- Downloads all the packages listed in `package.json`
-- Creates a `node_modules` folder with dependencies
-- Creates a `package-lock.json` file to lock dependency versions
-
----
-
-### 🏃‍♂️ Step 6: Start the Development Server
+### Running the Development Server
 
 ```bash
 # Start the development server
 npm run dev
 ```
 
-**You should see output like:**
+The site will be available at `http://localhost:5175/`
 
-```
-  VITE v5.4.19  ready in 543ms
+### Available Scripts
 
-  ➜  Local:   http://localhost:5175/
-  ➜  Network: use --host to expose
-```
+| Command           | Description                    |
+| ----------------- | ------------------------------ |
+| `npm run dev`     | Start development server       |
+| `npm run build`   | Build for production          |
+| `npm run preview` | Preview production build      |
+| `npm run lint`    | Check code quality            |
 
-🎉 **Success!** Open your browser and go to `http://localhost:5175/` to see the website.
-
----
-
-## 🛠️ Available Commands
-
-| Command           | Description              |
-| ----------------- | ------------------------ |
-| `npm run dev`     | Start development server |
-| `npm run build`   | Build for production     |
-| `npm run preview` | Preview production build |
-| `npm run lint`    | Check code quality       |
-
----
-
-## 📁 Project Structure
-
-```
-00_Websites/
-├── shared/                     # Shared components across projects
-│   ├── components/
-│   │   └── SharedButton.tsx   # Reusable button component
-│   └── styles/
-│       └── shared.css         # Shared styles
-├── upskiller/                 # Main company website
-│   ├── src/
-│   │   ├── components/        # React components
-│   │   ├── styles/           # CSS styles
-│   │   ├── App.tsx           # Main app component
-│   │   └── main.tsx          # Entry point
-│   ├── public/               # Static assets
-│   ├── index.html           # HTML template
-│   ├── package.json         # Dependencies and scripts
-│   └── vite.config.ts       # Build configuration
-├── tool-website-01/           # First tool/product website (coming soon)
-│   ├── src/                  # React components and logic
-│   ├── public/               # Static assets
-│   ├── index.html           # HTML template
-│   ├── package.json         # Dependencies and scripts
-│   └── vite.config.ts       # Build configuration
-├── [future-websites]/         # Additional websites will be added here
-└── README.md                 # This documentation
-```
-
----
-
-## 🎨 Technology Stack
-
-### **Frontend Framework**
-
-- **React 18** - Component-based UI library
-- **TypeScript** - Type-safe JavaScript
-- **Vite** - Fast build tool and dev server
-
-### **Styling**
-
-- **Tailwind CSS** - Utility-first CSS framework
-- **PostCSS** - CSS processing tool
-
-### **Development Tools**
-
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **Git** - Version control
-
----
-
-## 🔄 Development Workflow
-
-### 1. **Before You Start Working**
+### Building for Production
 
 ```bash
-# Make sure you have the latest changes
-git pull origin main
-
-# Install any new dependencies
-npm install
-```
-
-### 2. **While Working**
-
-```bash
-
-# Navigate to the root folder of website you are working on
-cd upskiller
-
-# Start the development server
-npm run dev
-
-# Your changes will automatically reload in the browser
-```
-
-### 3. **Before Committing**
-
-```bash
-# Check your code for issues
-npm run lint
-
-# Build to make sure everything works
+# Build the application
 npm run build
+
+# Preview the build locally
+npm run preview
 ```
 
-### 4. **Committing Changes**
+### Deployment
 
+The application is deployed using modern web hosting platforms. The build process creates static files that can be served from any CDN or static hosting service.
+
+**Important:** Ensure all environment variables and asset URLs are configured for the production environment.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ARCHITECTURE -->
+## Architecture
+
+### Project Structure
+
+```
+upskiller.xyz/
+├── upskiller/                     # Main website application
+│   ├── src/
+│   │   ├── components/            # React components
+│   │   │   ├── navigation/        # Navigation components
+│   │   │   ├── sections/          # Page sections (Hero, Team, etc.)
+│   │   │   ├── sections-components/  # Section-specific components
+│   │   │   │   └── team/          # Team interaction components
+│   │   │   └── shared-components/ # Reusable components
+│   │   ├── hooks/                 # Custom React hooks
+│   │   ├── utils/                 # Utility functions
+│   │   │   └── AssetPathManager.ts # Centralized asset management
+│   │   ├── constants/             # Application constants
+│   │   ├── services/              # API services
+│   │   ├── types/                 # TypeScript type definitions
+│   │   └── styles/               # Global styles
+│   ├── public/                    # Static assets
+│   │   ├── dynamic/              # JSON data files (local fallback)
+│   │   └── images/               # Images and SVG masks (local fallback)
+│   ├── index.html                # HTML template
+│   ├── package.json              # Dependencies and scripts
+│   └── vite.config.ts            # Build configuration
+├── shared/                       # Shared components (for future multi-site setup)
+├── masks/                        # Generated SVG mask files
+└── README.md                     # This documentation
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- TROUBLESHOOTING -->
+## Troubleshooting
+
+### Common Issues
+
+#### **"Missing dynamic content"**
+**Symptoms:** Empty sections, infinite loading states
+**Solution:**
 ```bash
-# Add your changes
-git add .
+# Check if required JSON files exist
+ls public/dynamic/
 
-# Commit with a descriptive message
-git commit -m "feat: add new hero section animation"
-
-# Push to GitHub
-git push
+# Download missing files from cloud storage
 ```
 
----
-
-## 🆘 Common Issues and Solutions
-
-### **"npm: command not found"**
-
-- Node.js is not installed or not in your PATH
-- Reinstall Node.js or restart your terminal
-
-### **"Permission denied" errors**
-
+#### **"Team interactions not working"**
+**Symptoms:** No hover effects on team image
+**Solution:**
 ```bash
-# Fix npm permissions (macOS/Linux)
-sudo chown -R $(whoami) ~/.npm
+# Check if SVG masks exist
+ls public/images/mask_*.svg
+
+# Check browser console for loading errors
 ```
 
-### **Port 5175 is already in use**
+#### **"Port 5175 already in use"**
+**Solution:** Vite will automatically use a different port, or kill the existing process
 
-- Another process is using the port
-- Kill the process or Vite will automatically use a different port
+#### **CORS errors in development**
+**Cause:** Browser security restrictions when fetching cloud assets
+**Solution:** Use local fallback files as described in setup instructions
 
-### **"Module not found" errors**
+### Development Tips
 
-```bash
-# Delete node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
+1. **Clear browser cache** when testing asset changes
+2. **Check browser console** for detailed error messages
+3. **Use browser network tab** to debug asset loading
+4. **Verify file paths** match exactly in public folder
 
-### **TypeScript errors**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Check the file paths in import statements
-- Make sure you're importing React components correctly
-- Verify TypeScript configuration in `tsconfig.json`
+<!-- CONTRIBUTING -->
+## Contributing
 
----
+Contributions are welcome! This project follows modern React/TypeScript best practices.
 
-## 🤝 Contributing Guidelines
+### Development Guidelines
 
-1. **Create a new branch** for your feature:
+1. **Fork the Project**
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Follow the code style**: Use existing patterns and conventions
+4. **Test thoroughly**: Ensure all functionality works with both cloud and local assets
+5. **Commit changes** (`git commit -m 'feat: add amazing feature'`)
+6. **Push to branch** (`git push origin feature/amazing-feature`)
+7. **Open a Pull Request**
 
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+### Code Standards
 
-2. **Make your changes** and test thoroughly
+* Use **TypeScript** for all new code
+* Follow **conventional commits** format
+* Maintain **component separation** principles
+* **Keep styling outside of TypeScript/TSX** - use CSS classes and Tailwind utilities
+* Ensure **responsive design** on all screen sizes
+* Test with **both cloud and local assets**
 
-3. **Commit your changes** with clear messages:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-   ```bash
-   git commit -m "feat: add contact form validation"
-   ```
+<!-- LICENSE -->
+## License
 
-4. **Push and create a Pull Request**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+Distributed under the MIT License. See `LICENSE` for more information.
 
----
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 📚 Learning Resources
+<!-- CONTACT -->
+## Contact
 
-### **React & TypeScript**
+**Upskiller Team**
+- Website: [https://upskiller.xyz](https://upskiller.xyz)
+- Email: [info@upskiller.xyz](mailto:info@upskiller.xyz)
+- LinkedIn: [Upskiller](https://www.linkedin.com/company/upskiller-xyz/)
 
-- [React Official Tutorial](https://react.dev/learn)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
+**Project Repository**: [https://github.com/upskiller-xyz/upskiller.xyz](https://github.com/upskiller-xyz/upskiller.xyz)
 
-### **Tailwind CSS**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Tailwind UI Components](https://tailwindui.com/components)
+## Acknowledgments
 
-### **General Web Development**
+* [Best README template](https://github.com/othneildrew/Best-README-Template)
 
-- [MDN Web Docs](https://developer.mozilla.org/) - Comprehensive web development reference
-- [JavaScript.info](https://javascript.info/) - Modern JavaScript tutorial
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
-
-## 🆘 Getting Help
-
-If you're stuck:
-
-1. **Check this README** - Most common issues are covered here
-2. **Ask in our team chat** - Don't hesitate to ask questions!
-3. **Google the error message** - Often others have faced the same issue
-4. **Check the official documentation** for the technology you're using
-
----
-
-## 📞 Contact
-
-For questions about this project, reach out to the development team.
-
-Happy coding! 🚀
+<!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/upskiller-xyz/upskiller.xyz.svg?style=for-the-badge
+[contributors-url]: https://github.com/upskiller-xyz/upskiller.xyz/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/upskiller-xyz/upskiller.xyz.svg?style=for-the-badge
+[forks-url]: https://github.com/upskiller-xyz/upskiller.xyz/network/members
+[stars-shield]: https://img.shields.io/github/stars/upskiller-xyz/upskiller.xyz.svg?style=for-the-badge
+[stars-url]: https://github.com/upskiller-xyz/upskiller.xyz/stargazers
+[issues-shield]: https://img.shields.io/github/issues/upskiller-xyz/upskiller.xyz.svg?style=for-the-badge
+[issues-url]: https://github.com/upskiller-xyz/upskiller.xyz/issues
+[license-shield]: https://img.shields.io/github/license/upskiller-xyz/upskiller.xyz.svg?style=for-the-badge
+[license-url]: https://github.com/upskiller-xyz/upskiller.xyz/blob/master/LICENSE
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[Vite]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[Vite-url]: https://vitejs.dev/
+[TailwindCSS]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com/

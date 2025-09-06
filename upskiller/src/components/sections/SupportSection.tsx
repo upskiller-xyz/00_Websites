@@ -1,56 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import Section from '../shared-components/Section';
+import SectionHeader from '../shared-components/SectionHeader';
+import PartnersGrid from '../sections-components/partners/PartnersGrid';
+import { Partner } from '@shared/types';
+import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
+import AssetPathManager from '../../utils/AssetPathManager';
 
 const SupportSection: React.FC = () => {
+  const [partners, setPartners] = useState<Partner[]>([]);
+
+  useEffect(() => {
+    const fetchPartners = async () => {
+      try {
+        const data = await fetchJsonWithFallback(
+          AssetPathManager.getDynamicData('partners.json'),
+          '/dynamic/partners.json'
+        );
+        setPartners(data.partners);
+      } catch (error) {
+        console.error('Error loading partners:', error);
+      }
+    };
+
+    fetchPartners();
+  }, []);
   return (
-    <section className="bg-[#99efca] pt-16">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-dark mb-8">
-            Collaborating with:
-          </h2>
-        </div>
-      </div>
+    <Section id="support" theme="support">
+      <SectionHeader 
+        content={{
+          title: "Trusted by",
+          theme: 'dark'
+        }}
+      />
       
-      <div className="bg-[#00d67a] py-8 transition-transform duration-300 hover:translate-x-[30px] hover:-translate-y-[30px]">
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/almi-dark.svg" 
-            alt="Almi"
-            className="h-16 md:h-20 opacity-80 hover:opacity-100 transition-opacity"
-          />
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/belysningsstiftelsen-dark.svg" 
-            alt="Belysningsstiftelsen"
-            className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity"
-          />
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/formas-dark.svg" 
-            alt="Formas"
-            className="h-16 md:h-20 opacity-80 hover:opacity-100 transition-opacity"
-          />
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/scaleway-dark.svg" 
-            alt="Scaleway"
-            className="h-16 md:h-20 opacity-80 hover:opacity-100 transition-opacity"
-          />
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/speckle-dark.svg" 
-            alt="Speckle"
-            className="h-16 md:h-20 opacity-80 hover:opacity-100 transition-opacity"
-          />
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/link-dark.svg" 
-            alt="Link"
-            className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity"
-          />
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/white-dark.svg" 
-            alt="White"
-            className="h-16 md:h-20 opacity-80 hover:opacity-100 transition-opacity"
-          />
-        </div>
-      </div>
-    </section>
+      <PartnersGrid partners={partners} />
+    </Section>
   );
 };
 

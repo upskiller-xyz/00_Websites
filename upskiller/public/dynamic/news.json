@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Stasja Speaking at the Rhino Dev Meeting in Stockholm",
+    "description": "Stasja has been invited to present the developments of Lux, our very first tool for automated daylight analysis.",
+    "date": "2025-08-15",
+    "url": "https://events.mcneel.eu/rhino-developer-meeting-stockholm-october-10-2025/"
+  },
+  {
+    "id": 2,
+    "title": "upskiller Secures Smart Built Environment Grant for Graph-ML Carbon Management Solution",
+    "description": "We have been awarded funding through Smart Built Environment's Innovationsidén 8 program to develop Graphs4CO₂, an Graph Machine Learning-powered platform technology to integrates carbon data with BIM models.",
+    "date": "2025-07-01",
+    "url": "https://www.smartbuilt.se/projekt/informationsinfrastruktur/graphs4co2/"
+  },
+  {
+    "id": 3,
+    "title": "Selected for Scaleway Growth Stage Startup Program",
+    "description": "The Scaleway Growth Stage Startup Program supports high-potential startups with access to Scaleway's cloud infrastructure, technical resources, and a community to help accelerate growth.",
+    "date": "2025-05-27",
+    "url": "https://www.linkedin.com/posts/upskiller-xyz_upskillerxyz-linkedin-activity-7322889561691303938-a6Lb"
+  },
+  {
+    "id": 4,
+    "title": "Belysningsstiftelsen Grant Awarded",
+    "description": "upskiller has been awarded funding from Belysningsstiftelsen to develop a machine learning daylight analysis tool that integrates with BIM software for real-time predictions.",
+    "date": "2025-03-20",
+    "url": "https://www.mynewsdesk.com/se/belysningsstiftelsen/pressreleases/nytt-ai-projekt-saetter-dagsljuset-i-fokus-3376592"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "partners": [
+    {
+      "id": "almi",
+      "name": "Almi",
+      "logo": "almi-dark.svg",
+      "size": "large"
+    },
+    {
+      "id": "belysningsstiftelsen", 
+      "name": "Belysningsstiftelsen",
+      "logo": "belysningsstiftelsen-dark.svg",
+      "size": "small"
+    },
+    {
+      "id": "formas",
+      "name": "Formas", 
+      "logo": "formas-dark.svg",
+      "size": "large"
+    },
+    {
+      "id": "scaleway",
+      "name": "Scaleway",
+      "logo": "scaleway-dark.svg", 
+      "size": "large"
+    },
+    {
+      "id": "speckle",
+      "name": "Speckle",
+      "logo": "speckle-dark.svg",
+      "size": "large"
+    },
+    {
+      "id": "link",
+      "name": "Link", 
+      "logo": "link-dark.svg",
+      "size": "small"
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "logo": "white-dark.svg",
+      "size": "large"
+    }
+  ]
+}

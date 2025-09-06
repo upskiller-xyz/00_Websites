@@ -12,6 +12,9 @@ build/
 # Compiled JavaScript files (use .tsx instead)
 src/**/*.js
 
+*.js
+*.mjs
+
 # Environment variables
 .env
 .env.local

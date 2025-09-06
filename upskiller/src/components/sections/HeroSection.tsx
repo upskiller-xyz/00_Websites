@@ -1,88 +1,61 @@
 // src/components/sections/HeroSection.tsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { EventType } from '../../constants/enums';
+import { ScrollProgressCalculator } from '../../utils/ScrollProgressCalculator';
+import HeroSectionContainer from '../sections-components/hero/HeroSectionContainer';
+import HeroBackgroundMotifs, { type HeroBackgroundMotifsRef } from '../sections-components/hero/HeroBackgroundMotifs';
+import HeroContent from '../sections-components/hero/HeroContent';
 
 const HeroSection: React.FC = () => {
-  const staticMotifRef = useRef<HTMLDivElement>(null);
-  const movingMotifRef = useRef<HTMLDivElement>(null);
+  const backgroundMotifsRef = useRef<HeroBackgroundMotifsRef>(null);
+  const textContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visibleElements, setVisibleElements] = useState<number[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const scrollFactor = scrollY * 0.5; // Adjust speed of parallax
       
-      if (movingMotifRef.current) {
-        // Move up and right (45 degrees)
-        movingMotifRef.current.style.transform = `translate(${scrollFactor}px, -${scrollFactor}px)`;
+      const scrollFactor = window.scrollY * 0.5;
+      
+      if (backgroundMotifsRef.current?.movingMotifRef.current) {
+        backgroundMotifsRef.current.movingMotifRef.current.style.transform = `translate(${scrollFactor}px, -${scrollFactor}px)`;
+      }
+
+      // Scroll-driven animation for sticky section
+      if (sectionRef.current) {
+        const container = sectionRef.current.parentElement;
+        if (container) {
+          const containerRect = container.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          if (ScrollProgressCalculator.isInStickyZone(containerRect, windowHeight)) {
+            const progress = ScrollProgressCalculator.calculateStickyProgress(containerRect, windowHeight);
+            const newVisibleElements = ScrollProgressCalculator.getVisibleElements(progress);
+            setVisibleElements(newVisibleElements);
+          } else {
+            setVisibleElements([]);
+          }
+        }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener(EventType.SCROLL, handleScroll);
+    handleScroll(); // Call once on mount
+    
+    return () => {
+      window.removeEventListener(EventType.SCROLL, handleScroll);
+    };
   }, []);
 
   return (
-    <section id="home" className="section-container relative overflow-hidden" style={{ backgroundColor: '#180057' }}>
-      {/* Background SVG motifs */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Static motif */}
-        <div
-          ref={staticMotifRef}
-          className="absolute"
-          style={{
-            top: '0', // Align with very top of webpage
-            left: '0',
-            width: '100%',
-            height: 'calc(100% + 80px)',
-            opacity: 0.33,
-            filter: 'brightness(0) saturate(100%) invert(30%) sepia(27%) saturate(1752%) hue-rotate(237deg) brightness(93%) contrast(86%)'
-          }}
-        >
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/motif-1.svg" 
-            alt="" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        
-        {/* Moving motif */}
-        <div
-          ref={movingMotifRef}
-          className="absolute"
-          style={{
-            top: '0', // Align with very top of webpage
-            left: '0',
-            width: '100%',
-            height: 'calc(100% + 80px)',
-            opacity: 0.33,
-            filter: 'brightness(0) saturate(100%) invert(30%) sepia(27%) saturate(1752%) hue-rotate(237deg) brightness(93%) contrast(86%)'
-          }}
-        >
-          <img 
-            src="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/motif-1.svg" 
-            alt="" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
+    <HeroSectionContainer ref={sectionRef} id="home">
+      <HeroBackgroundMotifs ref={backgroundMotifsRef} />
 
-      <div className="section-content relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="font-heading text-5xl lg:text-6xl font-bold leading-tight" style={{ color: '#f4fffa' }}>
-                Tools you trust. Insights you depend on.
-              </h1>
-              <p className="text-xl leading-relaxed" style={{ color: '#f4fffa' }}>
-                At Upskiller, we develop open, accessible, indispensable software that simplifies complexity, turns design information into meaningful insights and empowers AEC professionals to work efficiently.
-              </p>
-              <p className="text-xl leading-relaxed" style={{ color: '#f4fffa' }}>
-                We see a future where the community of AEC professionals seamlessly access information and knowledge, truly understands them, and use them to build a better world.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <HeroContent 
+        textContainerRef={textContainerRef}
+        visibleElements={visibleElements}
+      />
+    </HeroSectionContainer>
   );
 };
 

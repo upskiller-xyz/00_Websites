@@ -1,0 +1,14 @@
+{
+  "contactMethods": [
+    {
+      "type": "Email",
+      "value": "info@upskiller.xyz",
+      "link": "mailto:info@upskiller.xyz"
+    },
+    {
+      "type": "GitHub",
+      "value": "github.com/upskiller-xyz", 
+      "link": "https://github.com/upskiller-xyz"
+    }
+  ]
+}

@@ -4,15 +4,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>upskiller</title>
+    <title>Upskiller - AEC Software Tools & Performance Analysis | Daylight & CO2 Analysis</title>
+    <meta name="description" content="Intelligent AEC software tools that transform complex design data into actionable insights. Open, accessible tools for daylight analysis, CO2 modeling, and building performance optimization." />
+    <meta name="keywords" content="AEC software, architectural tools, daylight analysis, CO2 modeling, building performance, machine learning, construction software" />
+    <meta name="author" content="Upskiller" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Upskiller - AEC Software Tools & Performance Analysis" />
+    <meta property="og:description" content="Intelligent AEC software tools that transform complex design data into actionable insights. Open, accessible tools for daylight analysis, CO2 modeling, and building performance optimization." />
+    <meta property="og:url" content="https://upskiller.xyz" />
+    <meta property="og:site_name" content="Upskiller" />
+    <meta property="og:image" content="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Upskiller - AEC Software Tools & Performance Analysis" />
+    <meta name="twitter:description" content="Intelligent AEC software tools that transform complex design data into actionable insights. Open, accessible tools for daylight analysis, CO2 modeling, and building performance optimization." />
+    <meta name="twitter:image" content="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/og-image.png" />
+    <meta name="twitter:site" content="@upskiller" />
+    <meta name="twitter:creator" content="@upskiller" />
+    
     <link rel="apple-touch-icon" sizes="180x180" href="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="manifest" href="/manifest.json" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    
+    <!-- Cookie Consent Manager -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Upskiller",
+      "url": "https://upskiller.xyz",
+      "logo": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/favicon-32x32.png",
+      "description": "Intelligent AEC software tools that transform complex design data into actionable insights. Open, accessible tools for daylight analysis, CO2 modeling, and building performance optimization.",
+      "foundingDate": "2023",
+      "industry": "Software Development",
+      "knowsAbout": ["AEC Software", "Building Performance Analysis", "Daylight Analysis", "CO2 Modeling", "Machine Learning", "Construction Software"],
+      "sameAs": [
+        "https://twitter.com/upskiller",
+        "https://linkedin.com/company/upskiller"
+      ],
+      "offers": {
+        "@type": "Service",
+        "name": "AEC Software Tools",
+        "description": "Performance analysis tools for daylight and CO2 powered by machine learning"
+      }
+    }
+    </script>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/cookie-banner/silktide-consent-manager.css">
+    <script src="/cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: {
+        showBackground: true
+      },
+      cookieIcon: {
+        position: "bottomLeft"
+      },
+      cookieTypes: [
+        {
+          id: "necessary",
+          name: "Necessary",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          required: true,
+          onAccept: function() {
+            console.log('Add logic for the required Necessary here');
+          }
+        },
+        {
+          id: "analytics",
+          name: "Analytics",
+          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          defaultValue: true,
+          onAccept: function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('consent', 'update', {
+                analytics_storage: 'granted',
+              });
+            }
+            if (typeof dataLayer !== 'undefined') {
+              dataLayer.push({
+                'event': 'consent_accepted_analytics',
+              });
+            }
+          },
+          onReject: function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('consent', 'update', {
+                analytics_storage: 'denied',
+              });
+            }
+          }
+        },
+        {
+          id: "advertising",
+          name: "Advertising",
+          description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+          onAccept: function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+              });
+            }
+            if (typeof dataLayer !== 'undefined') {
+              dataLayer.push({
+                'event': 'consent_accepted_advertising',
+              });
+            }
+          },
+          onReject: function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('consent', 'update', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+              });
+            }
+          }
+        }
+      ],
+      text: {
+        banner: {
+          description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://upskiller.xyz/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+          acceptAllButtonText: "Accept all",
+          acceptAllButtonAccessibleLabel: "Accept all cookies",
+          rejectNonEssentialButtonText: "Reject non-essential",
+          rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+          preferencesButtonText: "Preferences",
+          preferencesButtonAccessibleLabel: "Toggle preferences"
+        },
+        preferences: {
+          title: "Customize your cookie preferences",
+          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          creditLinkText: "Get this banner for free",
+          creditLinkAccessibleLabel: "Get this banner for free"
+        }
+      },
+      position: {
+        banner: "bottomCenter"
+      }
+    });
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    
+    
     <script type="module" src="/src/main.tsx"></script>
+    
+   
   </body>
 </html>

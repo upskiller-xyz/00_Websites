@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "icon": {
+        "type": "image",
+        "src": "/images/daylight.gif",
+        "alt": "Daylight analysis animation"
+      },
+      "content": {
+        "name": "DAYLIGHT FACTOR",
+        "subtitle": "Fast daylight analysis tool",
+        "problem": "Daylight simulation is slow and incurs costs when done late in the design process.",
+        "solution": "Fast daylight analysis tool that helps architects and engineers optimize natural lighting in building designs.",
+        "features": [
+          "Real-time calculations",
+          "3D visualization", 
+          "Building code compliance",
+          "Export capabilities"
+        ]
+      },
+      "config": {
+        "id": "daylight-factor",
+        "status": "available",
+        "color": "primary",
+        "buttonText": "Try Now",
+        "linkUrl": "https://github.com/upskiller-xyz/Lux"
+      }
+    },
+    {
+      "icon": {
+        "type": "image",
+        "src": "/images/coming_soon_2.svg",
+        "alt": "Coming soon icon"
+      },
+      "content": {
+        "name": "LCA ASSISTANT",
+        "subtitle": "Carbon footprint analysis tool",
+        "problem": "Carbon footprint analysis is complex and requires specific knowledge. It will become mandatory in the future, but the accessibility barrier is high.",
+        "solution": "Accessible carbon footprint analysis tool that helps assess building performance.",
+        "features": [
+          "CO2 tracking",
+          "Material analysis", 
+          "Lifecycle assessment",
+          "Sustainability reports"
+        ]
+      },
+      "config": {
+        "id": "lca-assistant",
+        "status": "upcoming",
+        "color": "accent",
+        "buttonText": "Coming Soon"
+      }
+    }
+  ]
+}
